@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import boarddemo.action.ListAction;
+import boarddemo.action.ViewAction;
+import boarddemo.action.WriteAction;
 
 @WebServlet("/board/*")
 public class BoardController extends HttpServlet {
@@ -24,10 +26,43 @@ public class BoardController extends HttpServlet {
 	}
 	
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		ListAction list = new ListAction();
-		list.excute(req, resp);
 		
-		RequestDispatcher dis = req.getRequestDispatcher("/boardview/list.jsp");
-		dis.forward(req, resp);
+		String uri = req.getRequestURI();
+		// uri : /board/*
+		// System.out.println("uri : " + uri);
+		
+		// uri : /board/* 에서 두번째 / 부터 마지막 가지 가져옴
+		String action = uri.substring(uri.lastIndexOf("/"));
+		// /* 출력, 제목1 누르면 view.do 만 출력
+		//System.out.println("action : " + action);
+		
+		
+		//진입점을 하나로 만들어서 분리하여 작업하기
+		String path="";
+		if(action.equals("/*") || action.equals("/list.do")) {
+			ListAction list = new ListAction();
+			list.excute(req, resp);		
+			path = "/boardview/list.jsp";
+		} else if(action.equals("/view.do")) {
+			ViewAction view = new ViewAction();
+			view.execute(req, resp);
+			path="/boardview/view.jsp";
+		} else if(action.equals("/writeForm.do")) {
+			path="/boardview/write.jsp";
+		} else if(action.equals("/write.do")) {
+			WriteAction write = new WriteAction();
+			write.execute(req, resp);
+			resp.sendRedirect("list.do");
+			//리스트를 다시 받을때 WriteAction을 거치고 DAO를 통해 DB에 저장이 됨
+			//여기서 근데 foward 방식을 사용하면 write된 리스트를 받는게 아니라
+			//그냥 리스트를 다시 전달 받기 때문에 write된 리스트를 받지 못함
+			//response 방식(sendredirect)를 이용하여 적용된 리스트를
+			//list.do를 통해 전달 받으라고 요청해야지 받을 수 있음
+		}
+		
+		if(path != "") {
+			RequestDispatcher dis = req.getRequestDispatcher(path);
+			dis.forward(req, resp);
+		}
 	}
 }
