@@ -28,6 +28,7 @@ commit
 
 select * from board;
 
+가장 최근에 입력한 것을 가장 먼저 출력하기 위해서.. 이런식으로 저장한다
           num    ref     re_step    re_level
 제목     1        1           0             0
 제목     2        2           0             0

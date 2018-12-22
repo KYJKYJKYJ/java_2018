@@ -76,6 +76,10 @@
     <input type="hidden" name="re_step" value="${dto.re_step}" />
     <!-- re_step : 출력순서, 제목: 최근 입력 먼저 출력, 답변: 최근 입력 먼저 출력 -->
     <input type="hidden" name="re_level" value="${dto.re_level}" />
+    <!-- re_level : 들여쓰는 것, 답변 되는거 들여쓰는 순서 말함 -->
+    <!-- 제목 :~~~~~
+    		답변1: ~~~~~
+    			답변2: ~~~~ 처럼 -->
     <input type="hidden" name="pageNum" value="${param.pageNum}" />
     
    <input type="button" value="목록" class="list" /> 

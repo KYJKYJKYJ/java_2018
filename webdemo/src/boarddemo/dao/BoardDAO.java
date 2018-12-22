@@ -8,9 +8,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import boraddemo.dto.BoardDTO;
+import boraddemo.dto.PageDTO;
 
 public class BoardDAO {
 	private Connection conn;
@@ -43,13 +45,41 @@ public class BoardDAO {
 			conn.close();
 	}
 	
-	public List<BoardDTO> listMethod() {
+	public int rowTotalCount() {
+		int cnt = 0;
+		
+		try {
+			conn = init();
+			String sql = "select count(*) from board";
+			pstmt = conn.prepareStatement(sql);
+			rs=pstmt.executeQuery();
+			
+			if(rs.next())
+				cnt=rs.getInt(1);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return cnt;
+	}
+	
+	public List<BoardDTO> listMethod(PageDTO pdto) {
 		List<BoardDTO> aList = new ArrayList<BoardDTO>();
 		
 		try {
 			conn=init();
-			String sql = "select * from board order by ref desc";
+			String sql = "select b.* from (select rownum rm, a.* " + 
+					"from (select * from board order by ref desc, re_step)a)b " + 
+					"where rm >= ? and rm <= ?";
 			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, pdto.getStartRow());
+			pstmt.setInt(2, pdto.getEndRow());
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				BoardDTO dto = new BoardDTO();
@@ -131,16 +161,52 @@ public class BoardDAO {
 	public void insertMethod(BoardDTO dto) {
 		try {
 			conn=init();
-			String sql="insert into board(num,writer,email,subject,reg_date,ref,re_step,re_level,content,ip,upload) " +
+			if(dto.getRe_level() == 0) {
+				String sql="insert into board(num,writer,email,subject,reg_date,ref,re_step,re_level,content,ip,upload) " +
 					   "values(board_num_seq.nextval,?,?,?,sysdate,board_num_seq.nextval,0,0,?,?,?)";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, dto.getWriter());
+				pstmt.setString(2, dto.getEmail());
+				pstmt.setString(3, dto.getSubject());
+				pstmt.setString(4, dto.getContent());
+				pstmt.setString(5, dto.getIp());
+				pstmt.setString(6, dto.getUpload());
+			} else {
+				//답변 글일 경우
+				String sql="insert into board(num,writer,email,subject,reg_date,ref,re_step,re_level,content,ip,upload) " +
+						   "values(board_num_seq.nextval,?,?,?,sysdate,?,?,?,?,?,?)";
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, dto.getWriter());
+				pstmt.setString(2, dto.getEmail());
+				pstmt.setString(3, dto.getSubject());
+				pstmt.setInt(4, dto.getRef());
+				pstmt.setInt(5, dto.getRe_step());
+				pstmt.setInt(6, dto.getRe_level());
+				pstmt.setString(7, dto.getContent());
+				pstmt.setString(8, dto.getIp());
+				pstmt.setString(9, dto.getUpload());
+			}
+			pstmt.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}		
+	}
+	
+	public void reStepMethod(HashMap<String, Integer> map) {
+		try {
+			conn=init();
+			String sql = "update board set re_step=re_step+1 " +
+						 "where ref = ? and re_step > ?";
+			//가장 최근에 입력한 자료가 가장 먼저 출력되게 하기 위해서
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, dto.getWriter());
-			pstmt.setString(2, dto.getEmail());
-			pstmt.setString(3, dto.getSubject());
-			pstmt.setString(4, dto.getContent());
-			pstmt.setString(5, dto.getIp());
-			pstmt.setString(6, dto.getUpload());
-			
+			pstmt.setInt(1, map.get("ref"));
+			pstmt.setInt(2, map.get("re_step"));
 			pstmt.executeUpdate();
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

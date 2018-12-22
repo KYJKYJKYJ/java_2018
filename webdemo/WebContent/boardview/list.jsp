@@ -34,7 +34,12 @@
 					<tr>
 						<td>${dto.num}</td>
 						<!-- num이 구분자이므로 값을 받아서 구분할 것임, view.do는 상세보기 -->
-						<td><a href="view.do?num=${dto.num}">${dto.subject}</a></td>
+						<td>
+						<c:if test="${dto.re_level != 0}">
+							<img src="../boardview/images/level.gif" width="${10*dto.re_level}">
+							<img src="../boardview/images/re.gif" />
+						</c:if>
+						<a href="view.do?num=${dto.num}">${dto.subject}</a></td>
 						<td>${dto.writer}</td>
 						<td>${dto.readcount}</td>
 						<td>${dto.upload}</td>
@@ -42,6 +47,9 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		<c:forEach begin="${requestScope.pdto.startPage}" end="${requestScope.pdto.endPage}" var="i">
+			<span><a href="list.do?pageNum=${i}">${i}</a></span>		
+		</c:forEach>
 	</div>
 </body>
 </html>

@@ -20,6 +20,24 @@ div+p {
 	color: olive;
 }
 /*
+<div id="header"> 
+<div class="a"><div class="b"></div></div> 
+<div class="c"></div> 
+</div> 
+
+#header > div
+
+>> 자식을 의미합니다.
+>> 즉, #header 의 바로 하위에 있는 div 만을 의미합니다.
+>> 위의 코드에서는 div.a, div.c 만 해당됩니다.
+
+#header div
+
+>> 후손(자식, 자식의 자식, 자식의 자식의 자식,...) 을 의미합니다.
+>> 위의 코드에서는 div.a, div.b, div.c 모두 해당됩니다.
+*/
+
+/*
 <p></p>
 <div></div>
 <p></p>
@@ -29,7 +47,7 @@ div+p {
 */
 
 /* [속성명 = "값"] 속성 선택자이다 */
-p[class="one"] { /* p.one 으로 사용해도 무방할 듯함 */
+p[class="one"] {
 	border-style: solid;
 	border-width: 1px;
 	border-color: orange;
