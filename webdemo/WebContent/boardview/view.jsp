@@ -30,6 +30,11 @@
     	 $('form').attr('action', 'writeForm.do');
     	 $('form').submit();
       });
+      
+      $('.update').on('click', function() {
+    	  $('form').attr('action', 'updateForm.do');
+    	  $('form').submit();
+      });
    });
  </script>
  

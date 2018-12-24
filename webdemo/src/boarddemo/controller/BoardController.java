@@ -9,7 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.oreilly.servlet.MultipartRequest;
+
+import boarddemo.action.FileDownLoadAction;
 import boarddemo.action.ListAction;
+import boarddemo.action.UpdateFormAction;
+import boarddemo.action.UpdateProAction;
 import boarddemo.action.ViewAction;
 import boarddemo.action.WriteAction;
 
@@ -51,13 +56,24 @@ public class BoardController extends HttpServlet {
 			path="/boardview/write.jsp";
 		} else if(action.equals("/write.do")) {
 			WriteAction write = new WriteAction();
-			write.execute(req, resp);
-			resp.sendRedirect("list.do");
+			MultipartRequest multi = write.execute(req, resp);
+			resp.sendRedirect("list.do?pageNum="+multi.getParameter("pageNum"));
 			//리스트를 다시 받을때 WriteAction을 거치고 DAO를 통해 DB에 저장이 됨
 			//여기서 근데 foward 방식을 사용하면 write된 리스트를 받는게 아니라
 			//그냥 리스트를 다시 전달 받기 때문에 write된 리스트를 받지 못함
 			//response 방식(sendredirect)를 이용하여 적용된 리스트를
 			//list.do를 통해 전달 받으라고 요청해야지 받을 수 있음
+		} else if(action.equals("/download.do")) {
+			FileDownLoadAction download = new FileDownLoadAction();
+			download.execute(req, resp);
+		} else if(action.equals("/updateForm.do")) {
+			UpdateFormAction updateForm = new UpdateFormAction();
+			updateForm.execute(req, resp);
+			path="/boardview/update.jsp";
+		} else if(action.equals("/updatePro.do")) {
+			UpdateProAction updatePro = new UpdateProAction();
+			MultipartRequest multi = updatePro.execute(req, resp);
+			resp.sendRedirect("list.do?pageNum=" + multi.getParameter("PageNum"));
 		}
 		
 		if(path != "") {

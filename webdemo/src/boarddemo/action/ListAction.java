@@ -10,7 +10,7 @@ public class ListAction {
 	public void excute(HttpServletRequest req, HttpServletResponse resp) {
 		
 		String pageNum=req.getParameter("pageNum");
-		if(pageNum==null || pageNum.equals("")) {
+		if(pageNum==null || pageNum.equals("null")) {
 			pageNum="1";
 		}
 		

@@ -218,4 +218,45 @@ public class BoardDAO {
 			}
 		}
 	}
+	
+	public String fileMethod(int num) {
+		String fileStr = "";
+		try {
+			conn = init();
+			String sql = "select upload from board where num = ?";
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();			
+			
+			if(rs.next())
+				fileStr=rs.getString("upload");			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+				
+		return fileStr;
+	}
+	
+	public void updateMethod(BoardDTO dto) {
+		try {
+			conn = init();
+			String sql = "update board set subject = ?, ";
+			sql += "email = ?, content = ?, upload = ? where num = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getSubject());
+			pstmt.setString(2, dto.getEmail());
+			pstmt.setString(3, dto.getContent());
+			pstmt.setString(4, dto.getUpload());
+			pstmt.setInt(5, dto.getNum());
+			pstmt.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
