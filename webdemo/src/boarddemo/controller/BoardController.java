@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.oreilly.servlet.MultipartRequest;
 
+import boarddemo.action.DeleteAction;
 import boarddemo.action.FileDownLoadAction;
 import boarddemo.action.ListAction;
 import boarddemo.action.UpdateFormAction;
@@ -74,7 +75,12 @@ public class BoardController extends HttpServlet {
 			UpdateProAction updatePro = new UpdateProAction();
 			MultipartRequest multi = updatePro.execute(req, resp);
 			resp.sendRedirect("list.do?pageNum=" + multi.getParameter("PageNum"));
-		}
+		} else if(action.equals("/delete.do")) {
+			DeleteAction delete = new DeleteAction();
+			delete.execute(req, resp);
+			resp.sendRedirect("list.do?pageNum=" + req.getParameter("PageNum"));
+			
+		} 
 		
 		if(path != "") {
 			RequestDispatcher dis = req.getRequestDispatcher(path);

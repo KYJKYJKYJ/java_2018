@@ -259,4 +259,22 @@ public class BoardDAO {
 			}
 		}
 	}
+	
+	public void deleteMethod(int num) {
+		try {
+			conn = init();
+			String sql = "delete from board where num = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }

@@ -35,6 +35,11 @@
     	  $('form').attr('action', 'updateForm.do');
     	  $('form').submit();
       });
+      
+      $('.del').on('click', function() {
+    	  $('form').attr('action', 'delete.do');
+    	  $('form').submit();
+      });
    });
  </script>
  

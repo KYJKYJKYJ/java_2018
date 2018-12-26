@@ -17,9 +17,26 @@
   border-collapse: collapse;
  } 
 </style>
+
+<script
+   src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('form').on('submit', function(){
+	    $('[name=content]').val($('[name=content]').val().replace(/\n/gi, '<br/>'));
+	 });
+});
+</script>
 </head>
 <body>
-
+<jsp:scriptlet>
+	//치환변수 선언
+	pageContext.setAttribute("cr", "/r"); // Space
+	pageContext.setAttribute("cn", "\n"); // Enter
+	pageContext.setAttribute("crcn", "\r\n"); // Space, Enter
+</jsp:scriptlet>
+<!--//pageContext.setAttribute("br", "<br/>"); //br 태그 -->
 <form name="frm" action="updatePro.do" method="post" enctype="multipart/form-data">
        <input type="hidden" name="pageNum" value="${param.pageNum}" />
        <input type="hidden" name="num" value="${dto.num}" />
@@ -47,10 +64,10 @@
 
          <tr>
             <td>내용</td>
-            <td colspan="3">            
-                 
+            <td colspan="3">                 
                   <textarea rows="15"
-                  cols="25" name="content"><c:out value="${dto.content}" /></textarea></td>
+                  cols="25" name="content"><c:out value="${fn:replace(dto.content,'<br/>',cn)}" /></textarea>
+            </td>
          </tr>
 
          <tr>
