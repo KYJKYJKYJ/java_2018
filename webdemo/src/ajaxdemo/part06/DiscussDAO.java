@@ -125,4 +125,44 @@ public class DiscussDAO {
 		
 		return list;
 	}
+
+	public void commInsert(CommentDTO dto) {
+		 try {
+			conn = init();
+			String sql = "insert into comm values(comm_seq.nextval, ?, ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, dto.getNum());
+			pstmt.setString(2, dto.getContent());
+			pstmt.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+
+	public void commUpdate(CommentDTO dto) {
+		try {
+			conn = init();
+			String sql = "update comm set content = ? where col = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getContent());
+			pstmt.setInt(2, dto.getCol());
+			pstmt.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
 }

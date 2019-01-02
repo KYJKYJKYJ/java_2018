@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-@WebServlet("/commnetList")
+@WebServlet("/commentList")
 public class CommentListController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,6 +30,7 @@ public class CommentListController extends HttpServlet {
 			arr.add(obj);
 		}
 		
+		//보내는 text를 json으로 처리
 		resp.setContentType("text/json;charset=utf-8");
 		PrintWriter out = resp.getWriter();
 		out.print(arr);
