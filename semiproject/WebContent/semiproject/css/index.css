@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+body {
+	background-color: white;
+}
+
+/* 회전목마 자체 스타일 */
+.carousel .item {
+	text-align: center;
+	height: 400px;
+	background-color: white;
+	border: 10px solid white;
+}
+
+/* 회전목마 내부 이미지 스타일 */
+.carousel .item img {
+	border: 10px solid black;
+}
+
+/* 회전목마에 그라데이션 제거 */
+.carousel-control.left, .carousel-control.right{ 
+    background: none !important;
+    filter: progid:none !important;
+    color: black;
+}

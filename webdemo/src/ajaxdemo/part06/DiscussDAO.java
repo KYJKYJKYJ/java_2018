@@ -162,7 +162,27 @@ public class DiscussDAO {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
+		}	
+	}
+	
+	public void commDelete(int col) {
+		try {
+			conn = init();
+			String sql = "delete from comm where col=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, col);
+			pstmt.executeUpdate();
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
-		
 	}
 }
