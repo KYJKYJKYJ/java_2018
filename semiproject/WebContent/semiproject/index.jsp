@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KH & GYM</title>
 <link rel="stylesheet" href="css\main.css" />
 <link rel="stylesheet" href="css\main_layout.css" />
@@ -18,8 +19,8 @@
 			  'border' : 2, // 선의 생성을 설정
 			  'openItem': 0, // 마우스를 올리지 않았을 때 기본 열려있는 배너
 			  'duration': 400, // 전환되는 속도를 설정
-			  'openDim': 450, // 열려있는 배너의 너비를 설정
-			  'closeDim': 209.5, // 닫혀있는 배너의 너비를 설정
+			  'openDim': 600, // 열려있는 배너의 너비를 설정
+			  'closeDim': 251.64, // 닫혀있는 배너의 너비를 설정
 			  'effect': 'easeOutQuint', // 전환될 때의 가속도를 설정
 			  'fadeInTitle': false, // true시 현재 보이는 메뉴만 보여줌 (그냥 false로)
 			  'height': 200  // 배너의 높이를 설정
