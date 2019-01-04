@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+div#wrap {
+	width: 100%;
+	text-align: left;
+	padding: 0%;
+	leftmargin: 0;
+}
+
+header {
+	background-color: black;
+	height: 40%;
+	color: lightgray;
+	leftmargin: 0;
+}
+
+body {
+	leftmargin: 0;
+	rightmargin: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#intro {
+	text-align: center;
+}
+#intro2 {
+	text-align: center;
+}
+
+#intro2 img{
+	width: 900px;
+	height: 500px;
+}
+
+#trainer {
+	text-align: center;
+}
+
+#trainer li img {
+
+	width: 900px;
+	height: 500px;
+}
+
+#footer {
+	clear: both;
+	height: 100px;
+	background-color: black;
+
+}
