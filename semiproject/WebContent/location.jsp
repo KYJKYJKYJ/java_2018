@@ -65,7 +65,7 @@
 
 
 <style type="text/css">
-div#wapper {
+div#wrap {
 	width: 100%;
 	text-align: left;
 	padding: 0%;
@@ -104,15 +104,8 @@ margin: auto;
 </style>
 </head>
 <body onload="initialize()">
-	<div id="wapper">
-		<!-- 헤더시작 -->
-		<header>
-			<p>
-			<h1>
-				<b>KH_GYM</b>
-			</h1>
-			</p>
-		</header>
+	<div id="wrap">
+	
 	</div>
 	<div id="intro">
 		<img src="images/location_img.png">

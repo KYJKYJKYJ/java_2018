@@ -12,6 +12,6 @@ function process() {
 }
 
 function viewMessage(res) {
-	$('#section').html(res);
+	$('#div').html(res);
 }
 

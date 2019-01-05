@@ -7,10 +7,10 @@
 <meta charset="utf-8" />
 <meta name="google-translate-customization" content="6f1073ba568f1202-9c8990a4b3025b3e-ga74e3ea243d3f01d-14"></meta> <!-- 세계 언어 선택 메타 태그 -->
 <title> 이지스퍼블리싱 </title>
-<link rel="stylesheet" type="text/css" href="home/css/jquery-ui-1.10.4.custom.min.css"/>
-<link rel="stylesheet" type="text/css" href="home/css/common.css"/>
-<link rel="stylesheet" type="text/css" href="home/css/reset.css"/>
-<link rel="stylesheet" type="text/css" href="home/css/main.css"/>
+<link rel="stylesheet" type="text/css" href="/home/css/jquery-ui-1.10.4.custom.min.css"/>
+<link rel="stylesheet" type="text/css" href="/home/css/common.css"/>
+<link rel="stylesheet" type="text/css" href="/home/css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="/home/css/main.css"/>
 <style type="text/css">
 .bx-wrapper{
 	margin:auto auto;
@@ -19,11 +19,11 @@
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- ■■■  main.js에서 swipe를 사용하기 때문에 main보다 먼저 등록 한다. ■■■ -->
-<script type="text/javascript" src="home/js/swipe.js"></script>
-<script type="text/javascript" src="home/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript" src="/home/js/swipe.js"></script>
+<script type="text/javascript" src="/home/js/jquery.bxslider.min.js"></script>
 
-<script type="text/javascript" src="home/js/common.js"></script>
-<script type="text/javascript" src="home/js/main.js"></script>
+<script type="text/javascript" src="/home/js/common.js"></script>
+<script type="text/javascript" src="/home/js/main.js"></script>
 
 <script type="text/javascript">
 
@@ -38,23 +38,23 @@
  		<dd><a href="#container">본문 바로가기</a></dd>
 	</dl>
 	<div id="header">
-		<h1><a href="#"><img src="home/images/logo.gif" alt="이지스퍼블리싱" /></a></h1>
+		<h1><a href="#"><img src="/home/images/logo.gif" alt="이지스퍼블리싱" /></a></h1>
   		<dl id="util_menu">
 	     	<dt class="hide">유틸 메뉴</dt>
 	     	<dd class="util_first">
 				<ul>
 		   			<li class="login_wrap">
-		   				<a href="#"><img src="home/images/util_menu_1.gif" alt="로그인" /></a>
+		   				<a href="#"><img src="/home/images/util_menu_1.gif" alt="로그인" /></a>
 		     			<!-- 로그인 폼 -->
 						<form action="#" method="post" name="log_f" id="login_f">
 		 					 <fieldset>
 		    					<legend>로그인</legend>
 		    					<p class="user_id">
-		       						<label for="user_id"><img src="home/images/login_title_id.gif" alt="아이디" /></label>
+		       						<label for="user_id"><img src="/home/images/login_title_id.gif" alt="아이디" /></label>
 		       						<input type="text" name="user_id" id="user_id" />
 		   						</p>
 		                 		<p class="user_pw">
-		                    		<label for="user_pw"><img src="home/images/login_title_pw.gif" alt="아이디" /></label>
+		                    		<label for="user_pw"><img src="/home/images/login_title_pw.gif" alt="아이디" /></label>
 		                    		<input type="password" name="user_pw" id="user_pw" />
 		                    	</p>
 				              	<p>
@@ -62,29 +62,29 @@
 				                    <label for="save_id"> 비밀번호 저장</label>
 								</p>
 				                <p class="log_btn">
-				                    <input type="image" src="home/images/login_btn.gif" alt="로그인버튼" />
+				                    <input type="image" src="/home/images/login_btn.gif" alt="로그인버튼" />
 				                </p>
 				                <p class="join_btn_wrap">
 				                    <a href="#">회원가입</a>
 				                    <a href="#" class="sch_id_btn">아이디/비밀번호 찾기</a>
 				               	</p>
 				                <p class="login_close_btn">
-				                	<a href="#"><img src="home/images/login_close_btn.gif" alt="닫기버튼" /></a>
+				                	<a href="#"><img src="/home/images/login_close_btn.gif" alt="닫기버튼" /></a>
 								</p>
 							</fieldset>
 						</form>
 					</li>
 		           	<li>
-		            	<a href="#"><img src="home/images/util_menu_2.gif" alt="회원가입" /></a>
+		            	<a href="#"><img src="/home/images/util_menu_2.gif" alt="회원가입" /></a>
 		           	</li>
 		           	<li>
-		            	<a href="#"><img src="home/images/util_menu_3.gif" alt="도서목록" /></a>
+		            	<a href="#"><img src="/home/images/util_menu_3.gif" alt="도서목록" /></a>
 		           	</li>
 		           	<li>
-		            	<a href="#"><img src="home/images/util_menu_4.gif" alt="원고지원" /></a>
+		            	<a href="#"><img src="/home/images/util_menu_4.gif" alt="원고지원" /></a>
 		          	</li>
 		           <li>
-		            	<a href="#"><img src="home/images/util_menu_5.gif" alt="사이트맵" /></a>
+		            	<a href="#"><img src="/home/images/util_menu_5.gif" alt="사이트맵" /></a>
 		           </li>
 				</ul>
 			</dd>
@@ -92,18 +92,18 @@
 				<ul id="zoom">
 		        	<li><img src="home/images/util_zoom_1.gif" alt="" /></li>
 		           	<li>
-		            	<a href="#" class="zoom_in"><img src="home/images/util_zoom_2.gif" alt="" /></a>
+		            	<a href="#" class="zoom_in"><img src="/home/images/util_zoom_2.gif" alt="" /></a>
 		           	</li>
 		           	<li>
-		            	<a href="#" class="zoom_return"><img src="home/images/util_zoom_3.gif" alt="" /></a>
+		            	<a href="#" class="zoom_return"><img src="/home/images/util_zoom_3.gif" alt="" /></a>
 		           	</li>
 		           	<li>
-		            	<a href="#" class="zoom_out"><img src="home/images/util_zoom_4.gif" alt="" /></a>
+		            	<a href="#" class="zoom_out"><img src="/home/images/util_zoom_4.gif" alt="" /></a>
 		           	</li>
 		        </ul>
 			</dd>
 	     	<dd>
-	      		<a href="#" class="print_btn"><img src="home/images/util_print.gif" alt="프린트" /></a>
+	      		<a href="#" class="print_btn"><img src="/home/images/util_print.gif" alt="프린트" /></a>
 	     	</dd>
 	     	<dd>
 	        	<div id="google_translate_element"></div>
@@ -114,20 +114,20 @@
         		<legend>검색폼</legend>
        			<p>
        				<input type="text" name="keyword" id="keyword" title="검색어입력" />
-        			<input type="image" src="home/images/header_sch_btn.gif" alt="검색" />
+        			<input type="image" src="/home/images/header_sch_btn.gif" alt="검색" />
        			</p>
      		</fieldset>
   		</form>
  		<h2 class="hide">메인메뉴</h2>
 	  	<ul id="gnb">
 	     	<li>
-	     		<a href="#"><img src="home/images/gnb_1_out.gif" alt="" /></a>
+	     		<a href="#"><img src="/home/images/gnb_1_out.gif" alt="" /></a>
 	        	<ul class="sub1">
 	           		<li><a href="#">홈으로이동</a></li>
 	        	</ul>
 	     	</li>
    			<li>
-        		<a href="#"><img src="home/images/gnb_2_out.gif" alt="" /></a>
+        		<a href="#"><img src="/home/images/gnb_2_out.gif" alt="" /></a>
 	        	<ul class="sub2">
 	           		<li><a href="#">회사소개</a></li>
 	           		<li><a href="#">출간분야</a></li>
@@ -135,7 +135,7 @@
 	        	</ul>
    			</li>
 		    <li>
-		    	<a href="#"><img src="home/images/gnb_3_out.gif" alt="" /></a>
+		    	<a href="#"><img src="/home/images/gnb_3_out.gif" alt="" /></a>
 		        <ul class="sub3">
 		           <li><a href="#">신간도서</a></li>
 		           <li><a href="#">인기도서</a></li>
@@ -143,7 +143,7 @@
 		        </ul>
 		     </li>
 		    <li>
-		    	<a href="#"><img src="home/images/gnb_4_out.gif" alt="" /></a>
+		    	<a href="#"><img src="/home/images/gnb_4_out.gif" alt="" /></a>
 		        <ul class="sub4">
 		           <li><a href="#">고객문의</a></li>
 		           <li><a href="#">저자문의</a></li>
@@ -153,11 +153,11 @@
 		     </li>
 		</ul>
 		<p id="total_btn">
-     		<a href="#"><img src="home/images/allmenu_btn_out.gif" alt="전체 메뉴" /></a>
+     		<a href="#"><img src="/home/images/allmenu_btn_out.gif" alt="전체 메뉴" /></a>
  		</p>
   		<div id="total_menu">
      		<dl>
-        		<dt><img src="home/images/allmenu_title_1.gif" alt="홈" /></dt>
+        		<dt><img src="/home/images/allmenu_title_1.gif" alt="홈" /></dt>
         		<dd>
            			<ul>
               			<li><a href="#">홈으로이동</a></li>
@@ -165,7 +165,7 @@
         		</dd>
      		</dl>
      		<dl>
-        		<dt><img src="home/images/allmenu_title_2.gif" alt="홈" /></dt>
+        		<dt><img src="/home/images/allmenu_title_2.gif" alt="홈" /></dt>
         		<dd>
            			<ul>
 			             <li><a href="#">회사소개</a></li>
@@ -175,7 +175,7 @@
         		</dd>
      		</dl>
      		<dl>
-        		<dt><img src="home/images/allmenu_title_1.gif" alt="홈" /></dt>
+        		<dt><img src="/home/images/allmenu_title_1.gif" alt="홈" /></dt>
         		<dd>
            			<ul>
 			             <li><a href="#">신간도서</a></li>
@@ -185,7 +185,7 @@
         		</dd>
      		</dl>
     		<dl>
-        		<dt><img src="home/images/allmenu_title_1.gif" alt="홈" /></dt>
+        		<dt><img src="/home/images/allmenu_title_1.gif" alt="홈" /></dt>
         		<dd>
 			    	<ul>
 			        	<li><a href="#">고객문의</a></li>
@@ -196,7 +196,7 @@
 			      </dd>
 			</dl>
      		<p id="total_close">
-        		<a href="#"><img src="home/images/allmenu_close_btn.gif" alt="전체메뉴 닫기" /></a>
+        		<a href="#"><img src="/home/images/allmenu_close_btn.gif" alt="전체메뉴 닫기" /></a>
      		</p>
   		</div>
 		<p id="date_wrap">
@@ -210,44 +210,44 @@
 		<div id="mySwipe"  class='swipe'>
 			<ul class="touch_banner swipe-wrap"> 
     			<!-- 배너 목록 -->
-      			<li><a href="#"><img src="home/images/visual_img_1.jpg" alt="" /></a></li>
-      			<li><a href="#"><img src="home/images/visual_img_2.jpg" alt="" /></a></li>
-      			<li><a href="#"><img src="home/images/visual_img_3.jpg" alt="" /></a></li>
+      			<li><a href="#"><img src="/home/images/visual_img_1.jpg" alt="" /></a></li>
+      			<li><a href="#"><img src="/home/images/visual_img_2.jpg" alt="" /></a></li>
+      			<li><a href="#"><img src="/home/images/visual_img_3.jpg" alt="" /></a></li>
    			</ul>
   		</div>
   		<ul class="touch_bullet"> 
   			<!-- 배너 위치 표시 -->
-     		<li><img src="home/images/visual_bullet_on.png" class="active" alt="" /></li>
-     		<li><img src="home/images/visual_bullet_off.png" alt="" /></li>
-     		<li><img src="home/images/visual_bullet_off.png" alt="" /></li>
+     		<li><img src="/home/images/visual_bullet_on.png" class="active" alt="" /></li>
+     		<li><img src="/home/images/visual_bullet_off.png" alt="" /></li>
+     		<li><img src="/home/images/visual_bullet_off.png" alt="" /></li>
   		</ul>
   		<p class="touch_left_btn"><!-- 이전 버튼 -->
-		    <a href="#"><img src="home/images/visual_btn_left.png" alt="이전 배너" /></a>
+		    <a href="#"><img src="/home/images/visual_btn_left.png" alt="이전 배너" /></a>
   		</p>
   		<p class="touch_right_btn"><!-- 다음 버튼 -->
-     		<a href="#"><img src="home/images/visual_btn_right.png" alt="다음 배너" /></a>
+     		<a href="#"><img src="/home/images/visual_btn_right.png" alt="다음 배너" /></a>
   		</p>
 	</div><!--  end of visual -->
 	<hr />
 	<div id="contents">
  		<div id="contents_top">
    			<div id="roll_banner_wrap">
-     			<h3><img src="home/images/pop_title.gif" alt="알림판" /></h3>
+     			<h3><img src="/home/images/pop_title.gif" alt="알림판" /></h3>
      			<dl>
        				<dt class="roll_btn1">
-         				<a href="#" class="active"><img src="home/images/pop_btn_1_over.gif" alt="버튼1" /></a>
+         				<a href="#" class="active"><img src="/home/images/pop_btn_1_over.gif" alt="버튼1" /></a>
        				</dt>
        				<dd>
-          				<a href="#"><img src="home/images/pop_banner_1.gif" alt="배너1" /></a>
+          				<a href="#"><img src="/home/images/pop_banner_1.gif" alt="배너1" /></a>
        				</dd>
        				<dt class="roll_btn2">
-          				<a href="#"><img src="home/images/pop_btn_2_out.gif" alt="버튼2" /></a>
+          				<a href="#"><img src="/home/images/pop_btn_2_out.gif" alt="버튼2" /></a>
        				</dt>
        				<dd>
-          				<a href="#"><img src="home/images/pop_banner_2.gif" alt="배너2" /></a>
+          				<a href="#"><img src="/home/images/pop_banner_2.gif" alt="배너2" /></a>
        				</dd>
 					<dt class="roll_btn3">
-					   <a href="#"><img src="home/images/pop_btn_3_out.gif" alt="버튼3" /></a>
+					   <a href="#"><img src="/home/images/pop_btn_3_out.gif" alt="버튼3" /></a>
 					</dt>
 					<dd>
 					   <a href="#"><img src="home/images/pop_banner_3.gif" alt="배너3" /></a>

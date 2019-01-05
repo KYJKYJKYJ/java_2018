@@ -23,14 +23,14 @@
 
 </head>
 <body>
-
-	<section>
-		<img src="images\greeting.png" width="100%" height="700px"> <img
+<div id="wrap">
+	<div id="section">
+		<img src="images\greeting.png" width="90%" height="700px"> <img
 			id="content" src="images\intro_disc1.png" width="35%" height="7%">
 		<img src="images\content_img1.gif" width="70%" height="35%"> <img
 			id="content1" src="images\intro_content1.png" width="70%"
 			height="35%">
-	</section>
-
+	</div>
+</div>
 </body>
 </html>
