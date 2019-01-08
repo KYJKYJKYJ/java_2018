@@ -10,7 +10,6 @@
 
 <!-- 부트스트랩 -->
 <script src="js/bootstrap.min.js"></script>
-
 <link rel="stylesheet" href="css/bootstrap-theme.css">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="css/bootstrap.css">
@@ -22,30 +21,19 @@
 
 <!-- js 적용 -->
 <script type="text/javascript" src="js/main_navaccordian.js"></script>
-<script type="text/javascript" src="js/main_greeting.js"></script>
 
 <!-- location 맵 js -->
 <script
 	src="//maps.googleapis.com/maps/api/js?key=AIzaSyA1ZvigA9nlrvCEkKzxjOWmZTYFKjyWcYo"
 	async="" defer="defer" type="text/javascript"></script>
-<script type="text/javascript" src="js/main_location.js"></script>
-
-<!-- bxslider -->
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css"
-	rel="stylesheet" />
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
-
-<!-- bxslider js -->
-<script type="text/javascript" src="js/main_bxslider.js"></script>
-
+<script type="text/javascript" src="js/main_mini_location.js"></script>
 </head>
 <body>
 	<div id="wrap">
 		<div id="header">
+		<form action="main" method="get">
 			<h1>
-				<a href="#"><img src="images/KHGYM_logo.png" id="mainlogo" alt="KH & GYM"></a>
+				<a href="http://localhost:8090/semiproject/main"><img src="images/KHGYM_logo.png" alt="KH & GYM" id="mainlogotop"></a>
 			</h1>
 			<div style="position: relative;">
 				<div class="nav_accordian" id="center_accordian">
@@ -55,10 +43,10 @@
 								<span class="aboutcenter"></span>About Center
 							</h3>
 							<ul id="aboutcenter_sub">
-								<li><a href="javascript:void(0)" id="greeting">Greeting</a></li>
-								<li><a href="#">Instructor</a></li>
-								<li><a href="#">Center View</a></li>
-								<li><a href="#">Location</a></li>
+								<li><input type="submit" name="navBtn" value="greeting" />Greeting</li>
+								<li><a href="http://localhost:8090/semiproject/instructor">Instructor</a></li>
+								<li><a href="http://localhost:8090/semiproject/loungeview">Lounge View</a></li>
+								<li><a href="http://localhost:8090/semiproject/location">Location</a></li>
 							</ul>
 					</ul>
 				</div>
@@ -69,8 +57,8 @@
 								<span class="program"></span>Program
 							</h3>
 							<ul id="program_sub">
-								<li><a href="#">About Program</a></li>
-								<li><a href="#">Registration</a></li>
+								<li><a href="http://localhost:8090/semiproject/aboutprogram">About Program</a></li>
+								<li><a href="http://localhost:8090/semiproject/registration">Registration</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -82,10 +70,10 @@
 								<span class="community"></span>Community
 							</h3>
 							<ul id="community_sub">
-								<li><a href="#">Notice</a></li>
-								<li><a href="#">Q & A</a></li>
-								<li><a href="#">Review</a></li>
-								<li><a href="#">Learn</a></li>
+								<li><a href="http://localhost:8090/semiproject/notice">Notice</a></li>
+								<li><a href="http://localhost:8090/semiproject/qna">Q & A</a></li>
+								<li><a href="http://localhost:8090/semiproject/review">Review</a></li>
+								<li><a href="http://localhost:8090/semiproject/information">Information</a></li>
 							</ul>
 						<li>
 					</ul>
@@ -99,11 +87,13 @@
 							<ul id="account_sub">
 								<li><a href="#">Login</a></li>
 								<li><a href="#">Join</a></li>
+								<li><a href="#">My Page</a></li>
 							</ul>
-						<li>
+						</li>
 					</ul>
 				</div>
 			</div>
+			</form>
 		</div>
 		<!-- header end -->
 		<div id="section">
@@ -121,8 +111,10 @@
 				<!-- 이미지 등록 -->
 				<div class="carousel-inner">
 					<div class="item active">
+						<a href="http://localhost:8090/semiproject/aboutprogram">
 						<img class="img-responsive center-block" src="images\main1.jpg"
 							alt="PT" style='height: 100%; width: 70%; object-fit: container' />
+						</a>
 						<div class="carousel-caption">
 							<h3>PT</h3>
 							<p>PT</p>
@@ -130,9 +122,11 @@
 					</div>
 
 					<div class="item">
+						<a href="http://localhost:8090/semiproject/aboutprogram">
 						<img class="img-responsive center-block" src="images\main2.jpg"
 							alt="Spinning"
 							style='height: 100%; width: 70%; object-fit: container' />
+						</a>
 						<div class="carousel-caption">
 							<h3>Spinning</h3>
 							<p>Spinning</p>
@@ -140,9 +134,11 @@
 					</div>
 
 					<div class="item">
+						<a href="http://localhost:8090/semiproject/aboutprogram">
 						<img class="img-responsive center-block" src="images\main3.jpg"
 							alt="Yoga"
 							style='height: 100%; width: 70%; object-fit: container' />
+						</a>
 						<div class="carousel-caption">
 							<h3>Yoga</h3>
 							<p>Yoga</p>
@@ -150,9 +146,11 @@
 					</div>
 
 					<div class="item">
+						<a href="http://localhost:8090/semiproject/aboutprogram">
 						<img class="img-responsive center-block" src="images\main4.jpg"
 							alt="Pilates"
 							style='height: 100%; width: 70%; object-fit: container' />
+						</a>
 						<div class="carousel-caption">
 							<h3>Pilates</h3>
 							<p>Pilates</p>
@@ -190,26 +188,34 @@
 				<!-- 이미지 등록 -->
 				<div class="carousel-inner">
 					<div class="item active">
+						<a href="http://localhost:8090/semiproject/instructor">
 						<img class="img-responsive center-block" src="images\gosu.jpg"
 							alt="gosu"
 							style='height: 100%; width: 70%; object-fit: container' />
+						</a>
 					</div>
 
 					<div class="item">
+						<a href="http://localhost:8090/semiproject/instructor">
 						<img class="img-responsive center-block" src="images\gongyou.jpg"
 							alt="gongyou"
 							style='height: 100%; width: 70%; object-fit: container' />
+						</a>
 					</div>
 
 					<div class="item">
+						<a href="http://localhost:8090/semiproject/instructor">
 						<img class="img-responsive center-block" src="images\bear.jpg"
 							alt="bear"
 							style='height: 100%; width: 70%; object-fit: container' />
+						</a>
 					</div>
 
 					<div class="item">
+						<a href="http://localhost:8090/semiproject/instructor">
 						<img class="img-responsive center-block" src="images\han.jpg"
 							alt="han" style='height: 100%; width: 70%; object-fit: container' />
+						</a>
 					</div>
 				</div>
 			</div>
@@ -226,15 +232,17 @@
 					class="sr-only">Next</span>
 				</a>
 			</div>
-			<div id="location">
+			<div id="mini_location">
 				<h1>Location.</h1>
-				<div id="map_view" style="width: 70%; height: 298px;"></div>
+				<div id="mini_map_view" style="width: 70%; height: 298px;"></div>
 			</div>
 		</div>
 
 		<!-- section end -->
 		<div id="footer">
-			<img src="images/KHGYM_logo.png" id="footerlogo">
+			<a href="http://localhost:8090/semiproject/main">
+			<img src="images/KHGYM_logo.png" alt="KH & GYM" id="mainlogofooter">
+			</a>
 			<div style="position: relative">
 				<p id="footer_copyright">KH & GYM corp. copyleftⓒ</p>
 				<p id="footer_company">상표명 : KH & GYM</p>

@@ -3,125 +3,131 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="UTF-8">
-<title>KH & GYM _ Location</title>
+<title>Insert title here</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
+<script type="text/javascript" src="js/main_mini_location.js"></script>
 
-	});
-</script>
+<!-- 부트스트랩 -->
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 
-<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyA1ZvigA9nlrvCEkKzxjOWmZTYFKjyWcYo" async="" defer="defer" type="text/javascript"></script>
- <script>
- function initialize() {
+<!-- css 적용 -->
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/nav_accordian.css">
+<link rel="stylesheet" href="css/location.css">
 
- var Y_point = 37.499001; // Y 좌표
- var X_point = 127.032906; // X 좌표
- var zoomLevel = 17; // 첫 로딩시 보일 지도의 확대 레벨
- var markerTitle = "KH & GYM"; // 현재 위치 마커에 마우스를 올렸을때 나타나는 이름
- var markerMaxWidth = 300; // 마커를 클릭했을때 나타나는 말풍선의 최대 크기
+<!-- js 적용 -->
+<script type="text/javascript" src="js/main_navaccordian.js"></script>
 
- // 말풍선 내용
- var contentString = '<div id="content">' +
- '<div id="siteNotice">' +
- '</div>' +
- '<h3 id="firstHeading" class="firstHeading">KH&GYM</h3>' +
- '<div id="bodyContent">' +
- '<p>서울특별시 강남구 역삼동 강남구 테헤란로14길<br />' +
- 'Tel. Tel 02) 0123-4567</p>' +
- '</div>' +
- '</div>';
-
- var myLatlng = new google.maps.LatLng(Y_point, X_point);
- var mapOptions = {
- zoom: zoomLevel,
- center: myLatlng,
- mapTypeId: google.maps.MapTypeId.ROADMAP
- }
- var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
-
- var marker = new google.maps.Marker({
- position: myLatlng,
- map: map,
- title: markerTitle
- });
-
- var infowindow = new google.maps.InfoWindow(
- {
- content: contentString,
- maxWidth: markerMaxWidth
- }
- );
-
- google.maps.event.addListener(marker, 'click', function() {
- infowindow.open(map, marker);
- });
- }
- </script>
-
-
+<!-- location 맵 js -->
+<script
+	src="//maps.googleapis.com/maps/api/js?key=AIzaSyA1ZvigA9nlrvCEkKzxjOWmZTYFKjyWcYo"
+	async="" defer="defer" type="text/javascript"></script>
+<script type="text/javascript" src="js/main_mini_location.js"></script>
 
 <style type="text/css">
-div#wrap {
-	width: 100%;
-	text-align: left;
-	padding: 0%;
-	leftmargin: 0;
-}
-
-header {
-	background-color: black;
-	height: 40%;
-	color: lightgray;
-	leftmargin: 0;
-}
-
-body {
-	leftmargin: 0;
-	rightmargin: 0;
-	margin: 0;
-	padding: 0;
-}
-
-#intro {
-	text-align: center;
-}
-#intro2 {
-	text-align: center;
-}
-
-#intro2 img{
-
-	width: 800px;
-	height: 450px;
-}
-#map_view{
-margin: auto;
-}
 </style>
 </head>
-<body onload="initialize()">
+<body>
 	<div id="wrap">
-	
+		<div id="header">
+			<h1>
+				<a href="http://localhost:8090/semiproject/main"><img src="images/KHGYM_logo.png" alt="KH & GYM" id="mainlogotop"></a>
+			</h1>
+			<div style="position: relative;">
+				<div class="nav_accordian" id="center_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="aboutcenter"></span>About Center
+							</h3>
+							<ul id="aboutcenter_sub">
+								<li><a href="http://localhost:8090/semiproject/greeting">Greeting</a></li>
+								<li><a href="http://localhost:8090/semiproject/instructor">Instructor</a></li>
+								<li><a href="http://localhost:8090/semiproject/loungeview">Lounge View</a></li>
+								<li><a href="http://localhost:8090/semiproject/location">Location</a></li>
+							</ul>
+					</ul>
+				</div>
+				<div class="nav_accordian" id="program_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="program"></span>Program
+							</h3>
+							<ul id="program_sub">
+								<li><a href="http://localhost:8090/semiproject/aboutprogram">About Program</a></li>
+								<li><a href="http://localhost:8090/semiproject/registration">Registration</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="nav_accordian" id="community_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="community"></span>Community
+							</h3>
+							<ul id="community_sub">
+								<li><a href="http://localhost:8090/semiproject/notice">Notice</a></li>
+								<li><a href="http://localhost:8090/semiproject/qna">Q & A</a></li>
+								<li><a href="http://localhost:8090/semiproject/review">Review</a></li>
+								<li><a href="http://localhost:8090/semiproject/information">Information</a></li>
+							</ul>
+						<li>
+					</ul>
+				</div>
+				<div class="nav_accordian" id="account_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="account"></span>Account
+							</h3>
+							<ul id="account_sub">
+								<li><a href="#">Login</a></li>
+								<li><a href="#">Join</a></li>
+								<li><a href="#">My Page</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- header end -->
+		<div id="section">
+			<div id="location_intro">
+				<img src="images/location_img.png" width="100%">
+			</div>
+
+			<div id="location_intro2">
+				<img src="images/location.png">
+				<hr>
+				<img src="images/locationInfo.png">
+			</div>
+
+			<div id="mini_map_view" style="width: 800px; height: 480px;"></div>
+		</div>
+		<div id="footer">
+			<a href="http://localhost:8090/semiproject/main">
+			<img src="images/KHGYM_logo.png" alt="KH & GYM" id="mainlogofooter">
+			</a>
+			<div style="position: relative">
+				<p id="footer_copyright">KH & GYM corp. copyleftⓒ</p>
+				<p id="footer_company">상표명 : KH & GYM</p>
+				<p id="footer_location">주소 : 서울특별시 강남구 역삼동 강남구 테헤란로14길</p>
+				<p id="footer_manager">사업자 : 한윤희</p>
+				<p id="footer_tel">TEL : 02) 0123-4567</p>
+			</div>
+		</div>
+		<!-- footer end -->
+
 	</div>
-	<div id="intro">
-		<img src="images/location_img.png">
-	</div>
-	
-	<div id="intro2">
-		<img src="images/location.png">
-	<hr>
-		<img src="images/locationInfo.png">
-	</div>
-	
-	 <div id="map_view" style="width:800px; height:480px;">
-	
-	 </div>
-	
-	
-	
+
 </body>
 </html>

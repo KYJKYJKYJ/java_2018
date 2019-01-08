@@ -4,74 +4,114 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KH & GYM _ About Program</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KH & GYM _ aboutProgram</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script type="text/javascript">
-	$(document).ready(function() {
+<!-- js 적용 -->
+<script type="text/javascript" src="js/main_navaccordian.js"></script>
 
-	});
-</script>
+<!-- 부트스트랩 -->
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<!-- css 적용 -->
 <link rel="stylesheet" href="css\aboutProgram.css" />
-<link rel="stylesheet" href="css\navbar_font.css" />
+<link rel="stylesheet" href="css\main.css">
+<link rel="stylesheet" href="css\nav_accordian.css">
 
 </head>
 <body>
-	<div id="nav" class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container">
-			<!-- 화면 980px로 제한 두기 위해 fluid 두지 않음 -->
-			<div class="navbar-header">
-				<a class="navbar-brand" href="index.jsp">KH & GYM</a>
+<div id="wrap">
+	<div id="header">
+			<h1>
+				<a href="http://localhost:8090/semiproject/main"><img src="images/KHGYM_logo.png" alt="KH & GYM" id="mainlogotop"></a>
+			</h1>
+			<div style="position: relative;">
+				<div class="nav_accordian" id="center_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="aboutcenter"></span>About Center
+							</h3>
+							<ul id="aboutcenter_sub">
+								<li><a href="http://localhost:8090/semiproject/greeting">Greeting</a></li>
+								<li><a href="http://localhost:8090/semiproject/instructor">Instructor</a></li>
+								<li><a href="http://localhost:8090/semiproject/loungeview">Lounge View</a></li>
+								<li><a href="http://localhost:8090/semiproject/location">Location</a></li>
+							</ul>
+					</ul>
+				</div>
+				<div class="nav_accordian" id="program_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="program"></span>Program
+							</h3>
+							<ul id="program_sub">
+								<li><a href="http://localhost:8090/semiproject/aboutprogram">About Program</a></li>
+								<li><a href="http://localhost:8090/semiproject/registration">Registration</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="nav_accordian" id="community_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="community"></span>Community
+							</h3>
+							<ul id="community_sub">
+								<li><a href="http://localhost:8090/semiproject/notice">Notice</a></li>
+								<li><a href="http://localhost:8090/semiproject/qna">Q & A</a></li>
+								<li><a href="http://localhost:8090/semiproject/review">Review</a></li>
+								<li><a href="http://localhost:8090/semiproject/information">Information</a></li>
+							</ul>
+						<li>
+					</ul>
+				</div>
+				<div class="nav_accordian" id="account_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="account"></span>Account
+							</h3>
+							<ul id="account_sub">
+								<li><a href="#">Login</a></li>
+								<li><a href="#">Join</a></li>
+								<li><a href="#">My Page</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
 			</div>
-			<ul class="nav navbar-nav">
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">About Center <span
-						class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="greeting.jsp" id="nav_greeting">Greeting</a>
-						<li><a href="#" id="nav_instructor">Instructor</a>
-						<li><a href="#" id="nav_centerview">Center View</a>
-						<li><a href="#" id="nav_location">Location</a>
-					</ul></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">Program <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">About Program</a>
-						<li><a href="#">Registration</a>
-					</ul></li>
-				<li><a href="#">Learn</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Join</a></li>
-				<li><a href="#">Login</a></li>
-			</ul>
 		</div>
+		<!-- header end -->
+		<div id="section">
+			<img id="aboutprogram_content1" src="images/program_top.png" width="100%">
+			<img id="aboutprogram_content2" src="images/content_pt.png" width="100%" height="40%">
+			<img id="aboutprogram_content3" src="images/content_spinning.png" width="100%" height="40%">
+			<img id="aboutprogram_content4" src="images/content_yoga.png" width="100%" height="40%">
+			<img id="aboutprogram_content5" src="images/content_pilates.png" width="100%" height="40%">
+		</div>
+		<div id="footer">
+			<a href="http://localhost:8090/semiproject/main">
+			<img src="images/KHGYM_logo.png" alt="KH & GYM" id="mainlogofooter">
+			</a>
+			<div style="position: relative">
+				<p id="footer_copyright">KH & GYM corp. copyleftⓒ</p>
+				<p id="footer_company">상표명 : KH & GYM</p>
+				<p id="footer_location">주소 : 서울특별시 강남구 역삼동 강남구 테헤란로14길</p>
+				<p id="footer_manager">사업자 : 한윤희</p>
+				<p id="footer_tel">TEL : 02) 0123-4567</p>
+			</div>
+		</div>
+		<!-- footer end -->
 	</div>
-	
-	<img src="images/program_top.png" alt="program_top" width="100%" />
-	
-	<div id="program_guide">
-		<section>
-			<img src="images/content_pt.png" width="100%">
-			<hr>
-			<img src="images/content_spinning.png" width="100%">
-			<hr>
-			<img src="images/content_yoga.png" width="100%">
-			<hr>
-			<img src="images/content_pilates.png" width="100%">
-		</section>
-	</div>
-
-	<div id="footer">
-		<div>KH_GYM copyleft</div>
-	</div>
-	<!-- footer end -->
+	<!-- end wrap -->
 </body>
 </html>
