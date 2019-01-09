@@ -7,7 +7,7 @@ import boarddemo.dao.BoardDAO;
 import boraddemo.dto.PageDTO;
 
 public class ListAction {
-	public void excute(HttpServletRequest req, HttpServletResponse resp) {
+	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		
 		String pageNum=req.getParameter("PageNum");
 		if(pageNum==null || pageNum.equals("null")) {

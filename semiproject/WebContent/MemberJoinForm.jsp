@@ -1,22 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
- 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
- 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  
-  
- <script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script src="js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="css/bootstrap-theme.css">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -28,23 +32,23 @@
 
 <!-- location 맵 js -->
 <script
-   src="//maps.googleapis.com/maps/api/js?key=AIzaSyA1ZvigA9nlrvCEkKzxjOWmZTYFKjyWcYo"
-   async="" defer="defer" type="text/javascript"></script>
+	src="//maps.googleapis.com/maps/api/js?key=AIzaSyA1ZvigA9nlrvCEkKzxjOWmZTYFKjyWcYo"
+	async="" defer="defer" type="text/javascript"></script>
 <script type="text/javascript" src="js/main_mini_location.js"></script>
 
 <!-- bxslider -->
 <link
-   href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css"
-   rel="stylesheet" />
+	href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css"
+	rel="stylesheet" />
 <script
-   src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+	src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
 
 <!-- bxslider js -->
 <script type="text/javascript" src="js/main_bxslider.js"></script>
- 
- 
- 
- <script type="text/javascript">
+
+
+
+<script type="text/javascript">
 
 //모든 공백 체크 정규식
 var empJ = /\s/g;
@@ -191,9 +195,7 @@ $(document).ready(function() {
          $('#email_check').text('이메일 양식을 확인해주세요.');
          $('#email_check').css('color', 'red');
       }
-   });
-   
-            
+   });        
             
          // 생일 유효성 검사
            var birthJ = false;
@@ -269,151 +271,190 @@ $(document).ready(function() {
 
 });
 
-</script> 
+</script>
 </head>
 <body>
 
-<div id="wrap">
-      <div id="header">
-         <h1>
-            <a href="http://localhost:8090/semiprojcet/KH_GYM"><img src="images/KHGYM_logo.png" id="mainlogo" alt="KH & GYM"></a>
-         </h1>
-         <div style="position: relative;">
-            <div class="nav_accordian" id="center_accordian">
-               <ul id="navmenu">
-                  <li>
-                     <h3>
-                        <span class="aboutcenter"></span>About Center
-                     </h3>
-                     <ul id="aboutcenter_sub">
-                        <li><a href="javascript:void(0)" id="sub_greeting">Greeting</a></li>
-                        <li><a href="javascript:void(0)" id="sub_instructor">Instructor</a></li>
-                        <li><a href="javascript:void(0)" id="sub_loungeview">Lounge View</a></li>
-                        <li><a href="javascript:void(0)" id="sub_location">Location</a></li>
-                     </ul>
-               </ul>
-            </div>
-            <div class="nav_accordian" id="program_accordian">
-               <ul id="navmenu">
-                  <li>
-                     <h3>
-                        <span class="program"></span>Program
-                     </h3>
-                     <ul id="program_sub">
-                        <li><a href="javascript:void(0)" id="sub_aboutprogram">About Program</a></li>
-                        <li><a href="javascript:void(0)" id="sub_registration">Registration</a></li>
-                     </ul>
-                  </li>
-               </ul>
-            </div>
-            <div class="nav_accordian" id="community_accordian">
-               <ul id="navmenu">
-                  <li>
-                     <h3>
-                        <span class="community"></span>Community
-                     </h3>
-                     <ul id="community_sub">
-                        <li><a href="javascript:void(0)" id="sub_notice">Notice</a></li>
-                        <li><a href="javascript:void(0)" id="sub_qna">Q & A</a></li>
-                        <li><a href="javascript:void(0)" id="sub_review">Review</a></li>
-                        <li><a href="javascript:void(0)" id="sub_learn">Learn</a></li>
-                     </ul>
-                  <li>
-               </ul>
-            </div>
-            <div class="nav_accordian" id="account_accordian">
-               <ul id="navmenu">
-                  <li>
-                     <h3>
-                        <span class="account"></span>Account
-                     </h3>
-                     <ul id="account_sub">
-                        <li><a href="javascript:void(0)">Login</a></li>
-                        <li><a href="javascript:void(0)">Join</a></li>
-                     </ul>
-                  <li>
-               </ul>
-            </div>
-         </div>
-      </div>
+	<div id="wrap">
+		<div id="header">
+			<h1>
+				<a href="main.do"><img src="../images/KHGYM_logo.png"
+					alt="KH & GYM" id="mainlogotop"></a>
+			</h1>
+			<div style="position: relative;">
+				<div class="nav_accordian" id="center_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="aboutcenter"></span>About Center
+							</h3>
+							<ul id="aboutcenter_sub">
+								<li><a href="greeting.do">Greeting</a></li>
+								<li><a href="instructor.do">Instructor</a></li>
+								<li><a href="loungeview.do">Lounge View</a></li>
+								<li><a href="location.do">Location</a></li>
+							</ul>
+					</ul>
+				</div>
+				<div class="nav_accordian" id="program_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="program"></span>Program
+							</h3>
+							<ul id="program_sub">
+								<li><a href="aboutprogram.do">About Program</a></li>
+								<li><a href="registration.do">Registration</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<div class="nav_accordian" id="community_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="community"></span>Community
+							</h3>
+							<ul id="community_sub">
+								<li><a href="notice.do">Notice</a></li>
+								<li><a href="qna.do">Q & A</a></li>
+								<li><a href="review.do">Review</a></li>
+								<li><a href="information.do">Information</a></li>
+							</ul>
+						<li>
+					</ul>
+				</div>
+				<div class="nav_accordian" id="account_accordian">
+					<ul id="navmenu">
+						<li>
+							<h3>
+								<span class="account"></span>Account
+							</h3>
+							<ul id="account_sub">
+								<%
+									String id = (String) session.getAttribute("ID속성이름");
+									boolean login = id == null ? false : true;
+								%>
 
-<article class="container">
-            <div class="page-header">
-                <div class="col-md-6 col-md-offset-3">
-                <h3>회원가입</h3>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-offset-3">
-               <form action="Mem.do" method="post" role="form">
-             
-                    <div class="form-group">
-                        <label for="id">아이디</label>
-                        <input type="text" class="form-control" id="user_id" name="user_id" placeholder="ID">
-                        <div class="eheck_font" id="id_check"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="pw">비밀번호</label>
-                        <input type="password" class="form-control" id="user_pw" name="user_pw" placeholder="PASSWORD">
-                        <div class="eheck_font" id="pw_check"></div>
-                    </div>
-                    <div class="form-group">
-                        <label for="pw2">비밀번호 확인</label>
-                        <input type="password" class="form-control" id="user_pw2" name="user_pw2" placeholder="Confirm Password">
-                          <div class="eheck_font" id="pw2_check"></div>
-                    </div>
-                    
-                       <div class="form-group">
-                        <label for="user_name">이름</label>
-                        <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Name">
-                         <div class="eheck_font" id="name_check"></div>
-                    </div>
-                    
-                        <div class="form-group">
-                        <label for="user_birth">생년월일</label>
-                        <input type="tel" class="form-control" id="user_birth" name="user_birth" placeholder="ex) 19990101">
-                       <div class="eheck_font" id="birth_check"></div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="user_email">이메일 주소</label>
-                        <input type="email" class="form-control" id="user_email" name="user_email" placeholder="E-mail">
-                       <div class="eheck_font" id="email_check"></div>
-                    </div>
-                    
-             
-                    <div class="form-group">
-                        <label for="user_phone">휴대폰 번호('-'없이 번호만 입력해주세요)</label>
-                        <input type="tel" class="form-control" id="user_phone" name="user_phone" placeholder="Phone Number">
-                         <div class="eheck_font" id="phone_check"></div>
-                    </div>
-                    
-                    <div class="form-group text-center">
-                         <button type="submit" id="MemberJoin.jsp" class="btn btn-primary">
-                            회원가입<i class="fa fa-check spaceLeft"></i>
-                        </button> 
-                 
-                        <button type="reset" class="btn btn-warning">
-                            다시입력<i class="fa fa-times spaceLeft"></i>
-                        </button>
-                    </div>
-                 </form>
-            </div>
-  
-        </article>  
-              <!-- section end -->
-      <div id="footer">
-         <img src="images/KHGYM_logo.png" id="footerlogo">
-         <div style="position: relative">
-            <p id="footer_copyright">KH & GYM corp. copyleftⓒ</p>
-            <p id="footer_company">상표명 : KH & GYM</p>
-            <p id="footer_location">주소 : 서울특별시 강남구 역삼동 강남구 테헤란로14길</p>
-            <p id="footer_manager">사업자 : 한윤희</p>
-            <p id="footer_tel">TEL : 02) 0123-4567</p>
-         </div>
-      </div>
-      <!-- footer end -->
-   </div>
-   <!-- end wrap -->
+								<%
+									if (login) {
+								%>
+								<li><a href="#">Logout</a></li>
+								<%
+									} else {
+								%>
+								<li><a href="#">Login</a></li>
+								<%
+									}
+								%>
+								
+								<%
+									if (login == false) {
+								%>
+								<li><a href="MemberJoinForm.jsp">Join</a></li>
+								<%
+									}
+								%>
+								
+								<%
+									if (login) {
+								%>
+								<li><a href="#">My Page</a></li>
+								<%
+									}
+								%>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- header end -->
+
+
+		<article class="container">
+			<div class="page-header">
+				<div class="col-md-6 col-md-offset-3">
+					<h3>회원가입</h3>
+				</div>
+			</div>
+			<div class="col-sm-6 col-md-offset-3">
+				<form action="Mem.do" method="post" role="form">
+
+					<div class="form-group">
+						<label for="id">아이디</label> <input type="text"
+							class="form-control" id="user_id" name="user_id" placeholder="ID">
+						<div class="eheck_font" id="id_check"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="pw">비밀번호</label> <input type="password"
+							class="form-control" id="user_pw" name="user_pw"
+							placeholder="PASSWORD">
+						<div class="eheck_font" id="pw_check"></div>
+					</div>
+					<div class="form-group">
+						<label for="pw2">비밀번호 확인</label> <input type="password"
+							class="form-control" id="user_pw2" name="user_pw2"
+							placeholder="Confirm Password">
+						<div class="eheck_font" id="pw2_check"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="user_name">이름</label> <input type="text"
+							class="form-control" id="user_name" name="user_name"
+							placeholder="Name">
+						<div class="eheck_font" id="name_check"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="user_birth">생년월일</label> <input type="tel"
+							class="form-control" id="user_birth" name="user_birth"
+							placeholder="ex) 19990101">
+						<div class="eheck_font" id="birth_check"></div>
+					</div>
+
+					<div class="form-group">
+						<label for="user_email">이메일 주소</label> <input type="email"
+							class="form-control" id="user_email" name="user_email"
+							placeholder="E-mail">
+						<div class="eheck_font" id="email_check"></div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="user_phone">휴대폰 번호('-'없이 번호만 입력해주세요)</label> <input
+							type="tel" class="form-control" id="user_phone" name="user_phone"
+							placeholder="Phone Number">
+						<div class="eheck_font" id="phone_check"></div>
+					</div>
+
+					<div class="form-group text-center">
+						<button type="submit" id="MemberJoin.jsp" class="btn btn-primary">
+							회원가입<i class="fa fa-check spaceLeft"></i>
+						</button>
+
+						<button type="reset" class="btn btn-warning">
+							다시입력<i class="fa fa-times spaceLeft"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+
+		</article>
+		<!-- section end -->
+		<div id="footer">
+			<img src="images/KHGYM_logo.png" id="footerlogo">
+			<div style="position: relative">
+				<p id="footer_copyright">KH & GYM corp. copyleftⓒ</p>
+				<p id="footer_company">상표명 : KH & GYM</p>
+				<p id="footer_location">주소 : 서울특별시 강남구 역삼동 강남구 테헤란로14길</p>
+				<p id="footer_manager">사업자 : 한윤희</p>
+				<p id="footer_tel">TEL : 02) 0123-4567</p>
+			</div>
+		</div>
+		<!-- footer end -->
+	</div>
+	<!-- end wrap -->
 </body>
 </html>

@@ -15,7 +15,10 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
+	//enter가 줄바뀜이 되도록 /n을 br로 바꿔준다
 	$('form').on('submit', function(){
+		//name이라는 속성에서 컨텐츠값을 가지고와서 html에 br로 바꾸어서 넣어주어야 한다.
+		//속성으로 접근, 정규화표현식 사용(/\n/gi : 모든 enter값)
 	    $('[name=content]').val($('[name=content]').val().replace(/\n/gi, '<br/>'));
 	 });
 });

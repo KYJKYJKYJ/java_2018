@@ -12,24 +12,24 @@
 
 <!-- 부트스트랩 -->
 <script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/bootstrap-theme.css">
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/bootstrap-theme.css">
+<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
 
 <!-- css 적용 -->
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/nav_accordian.css">
-<link rel="stylesheet" href="css/location.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/nav_accordian.css">
+<link rel="stylesheet" href="../css/location.css">
 
 <!-- js 적용 -->
-<script type="text/javascript" src="js/main_navaccordian.js"></script>
+<script type="text/javascript" src="../js/main_navaccordian.js"></script>
 
 <!-- location 맵 js -->
 <script
 	src="//maps.googleapis.com/maps/api/js?key=AIzaSyA1ZvigA9nlrvCEkKzxjOWmZTYFKjyWcYo"
 	async="" defer="defer" type="text/javascript"></script>
-<script type="text/javascript" src="js/main_mini_location.js"></script>
+<script type="text/javascript" src="../js/main_mini_location.js"></script>
 
 <style type="text/css">
 </style>
@@ -38,7 +38,8 @@
 	<div id="wrap">
 		<div id="header">
 			<h1>
-				<a href="http://localhost:8090/semiproject/main"><img src="images/KHGYM_logo.png" alt="KH & GYM" id="mainlogotop"></a>
+				<a href="main.do"><img src="../images/KHGYM_logo.png"
+					alt="KH & GYM" id="mainlogotop"></a>
 			</h1>
 			<div style="position: relative;">
 				<div class="nav_accordian" id="center_accordian">
@@ -48,10 +49,10 @@
 								<span class="aboutcenter"></span>About Center
 							</h3>
 							<ul id="aboutcenter_sub">
-								<li><a href="http://localhost:8090/semiproject/greeting">Greeting</a></li>
-								<li><a href="http://localhost:8090/semiproject/instructor">Instructor</a></li>
-								<li><a href="http://localhost:8090/semiproject/loungeview">Lounge View</a></li>
-								<li><a href="http://localhost:8090/semiproject/location">Location</a></li>
+								<li><a href="greeting.do">Greeting</a></li>
+								<li><a href="instructor.do">Instructor</a></li>
+								<li><a href="loungeview.do">Lounge View</a></li>
+								<li><a href="location.do">Location</a></li>
 							</ul>
 					</ul>
 				</div>
@@ -62,8 +63,8 @@
 								<span class="program"></span>Program
 							</h3>
 							<ul id="program_sub">
-								<li><a href="http://localhost:8090/semiproject/aboutprogram">About Program</a></li>
-								<li><a href="http://localhost:8090/semiproject/registration">Registration</a></li>
+								<li><a href="aboutprogram.do">About Program</a></li>
+								<li><a href="registration.do">Registration</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -75,10 +76,10 @@
 								<span class="community"></span>Community
 							</h3>
 							<ul id="community_sub">
-								<li><a href="http://localhost:8090/semiproject/notice">Notice</a></li>
-								<li><a href="http://localhost:8090/semiproject/qna">Q & A</a></li>
-								<li><a href="http://localhost:8090/semiproject/review">Review</a></li>
-								<li><a href="http://localhost:8090/semiproject/information">Information</a></li>
+								<li><a href="notice.do">Notice</a></li>
+								<li><a href="qna.do">Q & A</a></li>
+								<li><a href="review.do">Review</a></li>
+								<li><a href="information.do">Information</a></li>
 							</ul>
 						<li>
 					</ul>
@@ -90,9 +91,38 @@
 								<span class="account"></span>Account
 							</h3>
 							<ul id="account_sub">
+								<%
+									String id = (String) session.getAttribute("ID속성이름");
+									boolean login = id == null ? false : true;
+								%>
+
+								<%
+									if (login) {
+								%>
+								<li><a href="#">Logout</a></li>
+								<%
+									} else {
+								%>
 								<li><a href="#">Login</a></li>
-								<li><a href="#">Join</a></li>
+								<%
+									}
+								%>
+								
+								<%
+									if (login == false) {
+								%>
+								<li><a href="MemberJoinForm.jsp">Join</a></li>
+								<%
+									}
+								%>
+								
+								<%
+									if (login) {
+								%>
 								<li><a href="#">My Page</a></li>
+								<%
+									}
+								%>
 							</ul>
 						</li>
 					</ul>
@@ -102,20 +132,20 @@
 		<!-- header end -->
 		<div id="section">
 			<div id="location_intro">
-				<img src="images/location_img.png" width="100%">
+				<img src="../images/location_img.png" width="100%">
 			</div>
 
 			<div id="location_intro2">
-				<img src="images/location.png">
+				<img src="../images/location.png">
 				<hr>
-				<img src="images/locationInfo.png">
+				<img src="../images/locationInfo.png">
 			</div>
 
 			<div id="mini_map_view" style="width: 800px; height: 480px;"></div>
 		</div>
 		<div id="footer">
-			<a href="http://localhost:8090/semiproject/main">
-			<img src="images/KHGYM_logo.png" alt="KH & GYM" id="mainlogofooter">
+			<a href="main.do"> <img src="../images/KHGYM_logo.png"
+				alt="KH & GYM" id="mainlogofooter">
 			</a>
 			<div style="position: relative">
 				<p id="footer_copyright">KH & GYM corp. copyleftⓒ</p>
@@ -126,6 +156,7 @@
 			</div>
 		</div>
 		<!-- footer end -->
+
 
 	</div>
 

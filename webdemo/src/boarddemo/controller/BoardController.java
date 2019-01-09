@@ -47,7 +47,7 @@ public class BoardController extends HttpServlet {
 		String path="";
 		if(action.equals("/*") || action.equals("/list.do")) {
 			ListAction list = new ListAction();
-			list.excute(req, resp);		
+			list.execute(req, resp);		
 			path = "/boardview/list.jsp";
 		} else if(action.equals("/view.do")) {
 			ViewAction view = new ViewAction();

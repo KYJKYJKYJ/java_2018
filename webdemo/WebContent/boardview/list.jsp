@@ -56,20 +56,33 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		<!-- 이전 -->
-		<c:if test="${requestScope.pdto.startPage > 1}">
-		<a href="list.do?pageNum=${pdto.startPage-pdto.blockPage}">이전</a>
-		</c:if>
-		
-		<!-- 페이지 -->
-		<c:forEach begin="${requestScope.pdto.startPage}" end="${requestScope.pdto.endPage}" var="i">
-			<span><a href="list.do?pageNum=${i}">${i}</a></span>		
-		</c:forEach>
-		
-		<!-- 다음 -->
-		<c:if test="${requestScope.pdto.endPage < requestScope.pdto.totalPage}">
-		<a href="list.do?pageNum=${pdto.startPage+pdto.blockPage}">다음</a>
-		</c:if>
+		<div id="paging">
+					<!-- 이전 처리 -->
+					<!-- 이전으로 이동할 것이 있을 경우에만 이전이 뜨도록 -->
+					<!-- 이전 4 5 6 / 이전을 누르면 1 2 3이 보이도록, 누르면 가장 첫번째 것이 선택이 되도록 -->
+					<!-- 이전의 조건 : 현재페이지의 값이 1보다 클때 , 현재페이지-한블럭에보여줄페이지 (4-3=1페이지가 선택되어서 나옴) -->
+					<c:if test="${requestScope.pdto.startPage > 1 }">
+						<span><a class="aPage"
+							href="list.do?pageNum=${pdto.startPage-pdto.blockPage }">이전</a></span>
+					</c:if>
+
+					<!-- 페이지 이동하는 부분 -->
+					<c:forEach begin="${requestScope.pdto.startPage }"
+						end="${requestScope.pdto.endPage }" var="i">
+						<span><a class="aPage" href="list.do?pageNum=${i}">${i}</a></span>
+					</c:forEach>
+
+					<!-- 다음 처리 -->
+					<!-- 다음으로 이동할 것이 있을 경우에만 다음이 뜨도록 -->
+					<!-- 1 2 3 다음 / 다음을 누르면 4 5 6이 보이도록, 누르면 가장 첫번째 것이 선택이 되도록 -->
+					<!-- 다음의 조건 : 현재 마지막 페이지보다 토탈페이지가 더 클때, 현재페이지+한블럭에보여줄페이지 (1+3=4페이지가 선택되어서 나옴) -->
+					<!-- 리퀘스트 영역에 있는 값들은 '이름.값'으로 가지고 와도 됨(생략해서 많이 사용, 생략하지 않고 다 쓰는것이 정석이기는 함)  -->
+					<c:if
+						test="${requestScope.pdto.endPage < requestScope.pdto.totalPage }">
+						<span><a class="aPage"
+							href="list.do?pageNum=${pdto.startPage+pdto.blockPage }">다음</a></span>
+					</c:if>
+				</div>
 		
 	</div>
 </body>

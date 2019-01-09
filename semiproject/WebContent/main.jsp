@@ -9,31 +9,31 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- 부트스트랩 -->
-<script src="js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/bootstrap-theme.css">
-<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="../js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/bootstrap-theme.css">
+<link rel="stylesheet" href="../css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="../css/bootstrap.css">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
 
 <!-- css 적용 -->
-<link rel="stylesheet" href="css/main.css">
-<link rel="stylesheet" href="css/nav_accordian.css">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/nav_accordian.css">
 
 <!-- js 적용 -->
-<script type="text/javascript" src="js/main_navaccordian.js"></script>
+<script type="text/javascript" src="../js/main_navaccordian.js"></script>
 
 <!-- location 맵 js -->
 <script
 	src="//maps.googleapis.com/maps/api/js?key=AIzaSyA1ZvigA9nlrvCEkKzxjOWmZTYFKjyWcYo"
 	async="" defer="defer" type="text/javascript"></script>
-<script type="text/javascript" src="js/main_mini_location.js"></script>
+<script type="text/javascript" src="../js/main_mini_location.js"></script>
 </head>
 <body>
 	<div id="wrap">
 		<div id="header">
-		<form action="main" method="get">
 			<h1>
-				<a href="http://localhost:8090/semiproject/main"><img src="images/KHGYM_logo.png" alt="KH & GYM" id="mainlogotop"></a>
+				<a href="main.do"><img src="../images/KHGYM_logo.png"
+					alt="KH & GYM" id="mainlogotop"></a>
 			</h1>
 			<div style="position: relative;">
 				<div class="nav_accordian" id="center_accordian">
@@ -43,10 +43,10 @@
 								<span class="aboutcenter"></span>About Center
 							</h3>
 							<ul id="aboutcenter_sub">
-								<li><input type="submit" name="navBtn" value="greeting" />Greeting</li>
-								<li><a href="http://localhost:8090/semiproject/instructor">Instructor</a></li>
-								<li><a href="http://localhost:8090/semiproject/loungeview">Lounge View</a></li>
-								<li><a href="http://localhost:8090/semiproject/location">Location</a></li>
+								<li><a href="greeting.do">Greeting</a></li>
+								<li><a href="instructor.do">Instructor</a></li>
+								<li><a href="loungeview.do">Lounge View</a></li>
+								<li><a href="location.do">Location</a></li>
 							</ul>
 					</ul>
 				</div>
@@ -57,8 +57,8 @@
 								<span class="program"></span>Program
 							</h3>
 							<ul id="program_sub">
-								<li><a href="http://localhost:8090/semiproject/aboutprogram">About Program</a></li>
-								<li><a href="http://localhost:8090/semiproject/registration">Registration</a></li>
+								<li><a href="aboutprogram.do">About Program</a></li>
+								<li><a href="registration.do">Registration</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -70,10 +70,10 @@
 								<span class="community"></span>Community
 							</h3>
 							<ul id="community_sub">
-								<li><a href="http://localhost:8090/semiproject/notice">Notice</a></li>
-								<li><a href="http://localhost:8090/semiproject/qna">Q & A</a></li>
-								<li><a href="http://localhost:8090/semiproject/review">Review</a></li>
-								<li><a href="http://localhost:8090/semiproject/information">Information</a></li>
+								<li><a href="notice.do">Notice</a></li>
+								<li><a href="qna.do">Q & A</a></li>
+								<li><a href="review.do">Review</a></li>
+								<li><a href="information.do">Information</a></li>
 							</ul>
 						<li>
 					</ul>
@@ -85,15 +85,46 @@
 								<span class="account"></span>Account
 							</h3>
 							<ul id="account_sub">
-								<li><a href="#">Login</a></li>
-								<li><a href="#">Join</a></li>
-								<li><a href="#">My Page</a></li>
+								<%
+									String id = (String) session.getAttribute("ID속성이름");
+									boolean login = id == null ? false : true;
+								%>
+
+								<%
+									if (login) {
+								%>
+								<%
+									session.invalidate();
+								%>
+								<li><a href="main.do">Logout</a></li>
+								<%
+									} else {
+								%>
+								<li><a href="">Login</a></li>
+								<%
+									}
+								%>
+								
+								<%
+									if (login == false) {
+								%>
+									<li><a href="MemberJoinForm.jsp">Join</a></li>
+								<%
+									}
+								%>
+								
+								<%
+									if (login) {
+								%>
+									<li><a href="#">My Page</a></li>
+								<%
+									}
+								%>
 							</ul>
 						</li>
 					</ul>
 				</div>
 			</div>
-			</form>
 		</div>
 		<!-- header end -->
 		<div id="section">
@@ -111,8 +142,8 @@
 				<!-- 이미지 등록 -->
 				<div class="carousel-inner">
 					<div class="item active">
-						<a href="http://localhost:8090/semiproject/aboutprogram">
-						<img class="img-responsive center-block" src="images\main1.jpg"
+						<a href="aboutprogram.do"> <img
+							class="img-responsive center-block" src="../images\main1.jpg"
 							alt="PT" style='height: 100%; width: 70%; object-fit: container' />
 						</a>
 						<div class="carousel-caption">
@@ -122,8 +153,8 @@
 					</div>
 
 					<div class="item">
-						<a href="http://localhost:8090/semiproject/aboutprogram">
-						<img class="img-responsive center-block" src="images\main2.jpg"
+						<a href="aboutprogram.do"> <img
+							class="img-responsive center-block" src="../images\main2.jpg"
 							alt="Spinning"
 							style='height: 100%; width: 70%; object-fit: container' />
 						</a>
@@ -134,8 +165,8 @@
 					</div>
 
 					<div class="item">
-						<a href="http://localhost:8090/semiproject/aboutprogram">
-						<img class="img-responsive center-block" src="images\main3.jpg"
+						<a href="aboutprogram.do"> <img
+							class="img-responsive center-block" src="../images\main3.jpg"
 							alt="Yoga"
 							style='height: 100%; width: 70%; object-fit: container' />
 						</a>
@@ -146,8 +177,8 @@
 					</div>
 
 					<div class="item">
-						<a href="http://localhost:8090/semiproject/aboutprogram">
-						<img class="img-responsive center-block" src="images\main4.jpg"
+						<a href="aboutprogram.do"> <img
+							class="img-responsive center-block" src="../images\main4.jpg"
 							alt="Pilates"
 							style='height: 100%; width: 70%; object-fit: container' />
 						</a>
@@ -188,32 +219,32 @@
 				<!-- 이미지 등록 -->
 				<div class="carousel-inner">
 					<div class="item active">
-						<a href="http://localhost:8090/semiproject/instructor">
-						<img class="img-responsive center-block" src="images\gosu.jpg"
+						<a href="instructor.do"> <img
+							class="img-responsive center-block" src="../images\gosu.jpg"
 							alt="gosu"
 							style='height: 100%; width: 70%; object-fit: container' />
 						</a>
 					</div>
 
 					<div class="item">
-						<a href="http://localhost:8090/semiproject/instructor">
-						<img class="img-responsive center-block" src="images\gongyou.jpg"
+						<a href="instructor.do"> <img
+							class="img-responsive center-block" src="../images\gongyou.jpg"
 							alt="gongyou"
 							style='height: 100%; width: 70%; object-fit: container' />
 						</a>
 					</div>
 
 					<div class="item">
-						<a href="http://localhost:8090/semiproject/instructor">
-						<img class="img-responsive center-block" src="images\bear.jpg"
+						<a href="instructor.do"> <img
+							class="img-responsive center-block" src="../images\bear.jpg"
 							alt="bear"
 							style='height: 100%; width: 70%; object-fit: container' />
 						</a>
 					</div>
 
 					<div class="item">
-						<a href="http://localhost:8090/semiproject/instructor">
-						<img class="img-responsive center-block" src="images\han.jpg"
+						<a href="instructor.do"> <img
+							class="img-responsive center-block" src="../images\han.jpg"
 							alt="han" style='height: 100%; width: 70%; object-fit: container' />
 						</a>
 					</div>
@@ -240,8 +271,8 @@
 
 		<!-- section end -->
 		<div id="footer">
-			<a href="http://localhost:8090/semiproject/main">
-			<img src="images/KHGYM_logo.png" alt="KH & GYM" id="mainlogofooter">
+			<a href="main.do"> <img src="../images/KHGYM_logo.png"
+				alt="KH & GYM" id="mainlogofooter">
 			</a>
 			<div style="position: relative">
 				<p id="footer_copyright">KH & GYM corp. copyleftⓒ</p>

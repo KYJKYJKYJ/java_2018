@@ -56,7 +56,7 @@ public class WriteAction {
 			dto.setRef(Integer.parseInt(multi.getParameter("ref")));
 			dto.setRe_step(Integer.parseInt(multi.getParameter("re_step"))+1);
 			dto.setRe_level(Integer.parseInt(multi.getParameter("re_level"))+1);
-			//답변글 저장하기 위해 값을 가져옴
+		//답변글 저장하기 위해 값을 가져옴
 		}
 		
 		dao.insertMethod(dto);
