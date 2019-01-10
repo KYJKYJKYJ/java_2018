@@ -104,7 +104,9 @@
 
 		<div id="notice_section">
 			<img id="notice_content1" src="../noticeview/images/notice_img.png"
-				width="100%"> <br/><br/><br/> <img id="notice_content2" width="20%"
+				width="100%"> <br />
+			<br />
+			<br /> <img id="notice_content2" width="20%"
 				src="../noticeview/images/notice.png">
 		</div>
 		<hr />
@@ -171,19 +173,19 @@
 			</div>
 
 		</div>
-	<div id="footer">
-		<a href="http://localhost:8090/semiproject/main"> <img
-			src="../images/KHGYM_logo.png" alt="KH & GYM" id="mainlogofooter">
-		</a>
-		<div style="position: relative">
-			<p id="footer_copyright">KH & GYM corp. copyleftⓒ</p>
-			<p id="footer_company">상표명 : KH & GYM</p>
-			<p id="footer_location">주소 : 서울특별시 강남구 역삼동 강남구 테헤란로14길</p>
-			<p id="footer_manager">사업자 : 한윤희</p>
-			<p id="footer_tel">TEL : 02) 0123-4567</p>
+		<div id="footer">
+			<a href="http://localhost:8090/semiproject/main"> <img
+				src="../images/KHGYM_logo.png" alt="KH & GYM" id="mainlogofooter">
+			</a>
+			<div style="position: relative">
+				<p id="footer_copyright">KH & GYM corp. copyleftⓒ</p>
+				<p id="footer_company">상표명 : KH & GYM</p>
+				<p id="footer_location">주소 : 서울특별시 강남구 역삼동 강남구 테헤란로14길</p>
+				<p id="footer_manager">사업자 : 한윤희</p>
+				<p id="footer_tel">TEL : 02) 0123-4567</p>
+			</div>
 		</div>
-	</div>
-	<!-- footer end -->
+		<!-- footer end -->
 	</div>
 </body>
 </html>

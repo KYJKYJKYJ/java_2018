@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dto.ReviewBoardDTO;
+import dto.ReviewReplyDTO;
 import dto.PageDTO;
 
 public class ReviewBoardDAO {
@@ -167,13 +168,13 @@ public class ReviewBoardDAO {
 		String fileStr = "";
 		try {
 			conn = init();
-			String sql = "select upload from review where num = ?";
+			String sql = "select review_upload from review where review_num = ?";
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();			
 			
 			if(rs.next())
-				fileStr=rs.getString("upload");			
+				fileStr=rs.getString("review_upload");			
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
@@ -186,7 +187,7 @@ public class ReviewBoardDAO {
 		try {
 			conn = init();
 			String sql = "update review set review_title = ?, ";
-			sql += "review_content = ?, review_upload = ? where review_num = ?";
+			sql += "review_contents = ?, review_upload = ? where review_num = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getReview_title());
 			pstmt.setString(2, dto.getReview_contents());
@@ -213,6 +214,98 @@ public class ReviewBoardDAO {
 			pstmt.setInt(1, num);
 			pstmt.executeUpdate();
 		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	//댓글 리스트 불러오기
+	public List<ReviewReplyDTO> getCommList(int num) {
+		List<ReviewReplyDTO> list = new ArrayList<ReviewReplyDTO>();
+		
+		try {
+			conn = init();
+			String sql = "select * from review_reply where reivew_num=? "
+						 + "order by re_col";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ReviewReplyDTO dto = new ReviewReplyDTO();
+				dto.setRe_col(rs.getInt("re_col"));
+				dto.setReview_num(rs.getInt("review_num"));
+				dto.setRe_content(rs.getString("re_content"));
+				list.add(dto);
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return list;
+	}
+
+	public void commInsert(ReviewReplyDTO dto) {
+		 try {
+			conn = init();
+			String sql = "insert into comm values(re_col.nextval, ?, ?)";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, dto.getReview_num());
+			pstmt.setString(2, dto.getRe_content());
+			pstmt.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+	}
+
+	public void commUpdate(ReviewReplyDTO dto) {
+		try {
+			conn = init();
+			String sql = "update reply set re_content = ? where re_col = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dto.getRe_content());
+			pstmt.setInt(2, dto.getRe_col());
+			pstmt.executeUpdate();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				exit();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}	
+	}
+	
+	public void commDelete(int col) {
+		try {
+			conn = init();
+			String sql = "delete from reply where re_col=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, col);
+			pstmt.executeUpdate();
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
 			try {

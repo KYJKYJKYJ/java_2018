@@ -9,7 +9,7 @@ import boraddemo.dto.PageDTO;
 public class ListAction {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) {
 		
-		String pageNum=req.getParameter("PageNum");
+		String pageNum=req.getParameter("pageNum");
 		if(pageNum==null || pageNum.equals("null")) {
 			pageNum="1";
 		}

@@ -6,7 +6,26 @@ public class ReviewBoardDTO {
 	private int review_num, review_ref;
 	private String review_title, review_upload, review_contents, user_id;
 	private Date review_date;
-	
+	private int re_col;
+
+	public int getRe_col() {
+		return re_col;
+	}
+
+	public void setRe_col(int re_col) {
+		this.re_col = re_col;
+	}
+
+	public String getRe_content() {
+		return re_content;
+	}
+
+	public void setRe_content(String re_content) {
+		this.re_content = re_content;
+	}
+
+	private String re_content;
+
 	public Date getReview_date() {
 		return review_date;
 	}
@@ -24,7 +43,7 @@ public class ReviewBoardDTO {
 	}
 
 	public ReviewBoardDTO() {
-		
+
 	}
 
 	public int getReview_num() {
@@ -66,5 +85,5 @@ public class ReviewBoardDTO {
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
-		
+
 }

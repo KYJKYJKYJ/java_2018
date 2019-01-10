@@ -83,5 +83,27 @@
    <input type="button" value="수정" class="update" />
    <input type="button" value="삭제" class="del" />
    </form>
+
+	<!-- 댓글목록출력 -->
+	<p>댓글내용</p>
+	<div id="commentList">
+		<script type="text/javascript">
+			listView("${requestScope.dto.re_col}");
+		</script>
+	</div>
+
+	<!-- 댓글수정 -->
+	<div id="divUpdate">
+		<input type="hidden" id="textCol" />
+		<textarea id="textUpdate" rows="10" cols="20"></textarea>
+		<input type="button" id="btnUpdate" value="수정" />
+	</div>
+
+	<!-- 댓글입력 -->
+	<div id="commentAdd">
+		<textarea id="textInput"></textarea>
+		<input type="button" id="btnInput" value="댓글 입력" />
+	</div>
+   
 </body>
 </html>
