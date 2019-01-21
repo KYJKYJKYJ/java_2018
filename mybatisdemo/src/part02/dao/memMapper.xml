@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace = "mem" >
+  	<select id = "all" resultType="part02.dto.MemDTO">
+  		select * from mem order by num
+  	</select>
+  	
+  	<!-- insert 쿼리 사용시 insert -->
+  	<!-- insert, delete, update 다 resultType은 삽입, 삭제, 수정된 컬럼 수 (int)만 리턴해주므로 따로 선언하면 안됨! -->
+  	<insert id="ins" parameterType="part02.dto.MemDTO">
+  		insert into mem values(mem_num_seq.nextval, #{name,jdbcType=VARCHAR}, #{age}, #{loc,jdbcType=VARCHAR})
+  		<!-- null 값 허용을 mybatis에서 하려면 #{컬럼명,jdbcType=VARCHAR} 해야함 -->
+  	</insert>
+  	
+  	<update id="upt" parameterType="java.util.HashMap">
+  		update mem set loc=#{loc}
+  		where num=#{num}
+  	</update>
+  </mapper>

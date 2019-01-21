@@ -2,7 +2,7 @@ package part01.dao;
 
 import java.io.IOException;
 import java.io.Reader;
-import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -63,6 +63,18 @@ public class EmployeesDAO {
 	
 	public List<EmployeesDTO> yearMethod(int year) {
 		return session.selectList("emp.year", year);
+	}
+	
+	public List<EmployeesDTO> dtoMethod(EmployeesDTO dto) {
+		return session.selectList("emp.dtoList", dto);
+	}
+	
+	public List<EmployeesDTO> moneyMethod(HashMap<String, Integer> map) {
+		return session.selectList("emp.moneyList", map);
+	}
+	
+	public HashMap<String, Integer> salaryMap() {
+		return session.selectOne("emp.dataMap");
 	}
 	
 }

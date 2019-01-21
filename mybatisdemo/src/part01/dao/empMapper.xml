@@ -46,8 +46,34 @@
     
     select * from employees
     	 where hire_date between '2007-01-01' and '2007-12-31'
-    <!-- 위 방법이 to_char보다 속도가 빨라 권장됨 -->
-    
+    <!-- 위 방법이 to_char보다 속도가 빨라 권장됨 -->    
   </select>
    
+  <select id = "dtoList"
+   parameterType="part01.dto.EmployeesDTO"
+   resultType="part01.dto.EmployeesDTO">
+  select first_name, hire_date
+  from employees
+  where first_name like '%' || #{first_name} || '%'
+  and salary >= #{salary}
+  <!-- 파라미터가 여러개일 경우 그냥 DTO선언 -->
+  <!-- 이 때 변수의 이름은 dto에서 가져오기 때문에 컬럼과 이름이 같아야함 -->
+  </select> 
+  
+  <select id="moneyList"
+   parameterType="java.util.HashMap"
+   resultType="part01.dto.EmployeesDTO">
+  select * from employees
+  <!-- 문자열 그대로 저장하게 해주는 CDATA 파싱하지 않는 문자 데이터, 컬럼이랑 다른 매개변수를 사용할 때 사용하는 듯 함 -->
+  <![CDATA[ 
+  where salary >= #{losalary} and salary <= #{hisalary}
+  ]]>
+  </select>
+  
+  <select id="dataMap"
+   resultType="java.util.HashMap">
+   select max(salary) high, min(salary) low
+   from employees  
+   </select>
+   <!-- max(salary) high, min(salary) low 선언되는 컬럼명의 이름을 정해준 형태! -->
 </mapper>
