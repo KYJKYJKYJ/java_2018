@@ -21,8 +21,13 @@ public class WriteAction {
 		System.out.println("path : " + path);		
 		String saveDirectory = path + "/temp";*/
 		
+		String path = req.getServletContext().getRealPath("/");
+		//이 경로에 파일을 저장하게 하는것이 서로 동일하게 작업할수 있게함, 직접적인 폴더 경로 설정해서 하는 것은 적절하지 않음
+		System.out.println("path : " + path);		
+		String saveDirectory = path + "/temp";
+		
 		//아래와 같이 c:/temp 처럼 직접 경로를 설정해서 하는 건 옳지않음
-		String saveDirectory = "c:/temp";
+		//String saveDirectory = "c:/temp";
 		File file = new File(saveDirectory);
 		if(!file.exists())
 			file.mkdir();

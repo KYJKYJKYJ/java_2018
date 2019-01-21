@@ -1,57 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KH & GYM _ Information</title>
+<title>KH & GYM</title>
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		var page = 1;
-
-		/* 페이지가 로딩이 되면 page에 1씩 더하면서 20개 스크롤 로딩 하고 무한 스크롤 함수 바인딩 */
-		/* 바인딩 : 각종 값들이 확정되어 더 이상 변경할 수 없는 구속(bind) 상태가 되는 것*/
-		for (var i = 0; i <= 20; i++) {
-			page = i;
-
-			$("<h1>" + page + " line scroll</h1>").appendTo("#content");
-
-			if (page == 20) {
-				$(window).bind("scroll", infinityScroll);
-			}
-		}
-
-		function infinityScroll() {
-			//현재문서의 높이를 구함.
-			var documentHeight = $(document).height();
-			console.log("documentHeight : " + documentHeight);
-
-			//scrollTop() 메서드는 선택된 요소의 세로 스크롤 위치를 설정하거나 반환    
-			//스크롤바가 맨 위쪽에 있을때 , 위치는 0
-			console.log("window의 scrollTop() : " + $(window).scrollTop());
-			//height() 메서드는 브라우저 창의 높이를 설정하거나 반환
-			console.log("window의 height() : " + $(window).height());
-
-			//세로 스크롤위치 max값과 창의 높이를 더하면 현재문서의 높이를 구할수있음.
-			//세로 스크롤위치 값이 max이면 문서의 끝에 도달했다는 의미
-			var scrollHeight = $(window).scrollTop() + $(window).height();
-			console.log("scrollHeight : " + scrollHeight);
-
-			if (scrollHeight == documentHeight) { //문서의 맨끝에 도달했을때 내용 추가 
-				for (var i = 0; i < 10; i++) {
-					//page = page + 1;
-					page++;
-					//$("<h1> infinity scroll </h>").appendTo("body");
-					$("<h1>" + page + " line scroll</h1>").appendTo("#content");
-				}
-			}
-		}
-	});
-</script>
+   src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="../js/information.js"></script>
 <!-- 부트스트랩 -->
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="../css/bootstrap-theme.css">
 <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="../css/bootstrap.css">
@@ -66,8 +25,8 @@
 
 </head>
 <body>
-	<div id="wrap">
-		<div id="header">
+   <div id="wrap">
+      <div id="header">
 			<h1>
 				<a href="main.do"><img src="../images/KHGYM_logo.png"
 					alt="KH & GYM" id="mainlogotop"></a>
@@ -122,38 +81,44 @@
 								<span class="account"></span>Account
 							</h3>
 							<ul id="account_sub">
-								<%
-									String id = (String) session.getAttribute("ID속성이름");
-									boolean login = id == null ? false : true;
-								%>
+								    <%
+                           String id = (String) session.getAttribute("user_id");
+                           boolean login = id == null ? false : true;
+                        %>
 
-								<%
-									if (login) {
-								%>
-								<li><a href="#">Logout</a></li>
-								<%
-									} else {
-								%>
-								<li><a href="#">Login</a></li>
-								<%
-									}
-								%>
-								
-								<%
-									if (login == false) {
-								%>
-								<li><a href="MemberJoinForm.jsp">Join</a></li>
-								<%
-									}
-								%>
-								
-								<%
-									if (login) {
-								%>
-								<li><a href="#">My Page</a></li>
-								<%
-									}
-								%>
+                        <%
+                           if  (login) {
+                        	   out.write("<script type='text/javascript'>\n");
+                               //out.write("alert('즐거운 시간 보내세요!')");
+                               out.write("</script>\n");
+                        	   
+                        %>
+                        
+                        <li><a href="Logout.do">Logout</a></li>
+                        <%
+                           } else {
+                        	  
+                        %>
+                        <li><a href="Login.do">Login</a></li>
+                        <%
+                           }
+                        %>
+                        
+                        <%
+                           if (login == false) {
+                        %>
+                           <li><a href="Mem.do">Join</a></li>
+                        <%
+                           }
+                        %>
+                        
+                        <%
+                           if (login) {
+                        %>
+                           <li><a href="MyPage.do">My Page</a></li>
+                        <%
+                           }
+                        %>
 							</ul>
 						</li>
 					</ul>
@@ -161,11 +126,16 @@
 			</div>
 		</div>
 		<!-- header end -->
-		<div id="section">
-			<div id="content"></div>
-		</div>
-		<!-- section end -->
-		<div id="footer">
+      <div id="section" style="width: 100%">
+			<div id="content" 
+			style="position: relative; width: 100%; padding-top: 30px;">
+			<img src="../images/information.png" height="375px" width="1200px"></div>	
+			<div id="content1" 
+			style="position: relative; left: 12%; padding-top: 30px; height: auto;
+				   width: auto; padding-bottom: 30px;"></div>
+	  </div>
+      <!-- section end -->
+      <div id="footer">
          <a href="main.do">
          <img src="../images/KHGYM_logo.png" alt="KH & GYM" id="mainlogofooter">
          </a>
@@ -178,6 +148,6 @@
          </div>
       </div>
       <!-- footer end -->
-	</div>
+   </div>
 </body>
 </html>

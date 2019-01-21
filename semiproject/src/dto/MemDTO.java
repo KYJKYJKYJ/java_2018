@@ -1,4 +1,4 @@
-package dto;
+package DTO;
 
 public class MemDTO {
    private String user_id;

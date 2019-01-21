@@ -1,9 +1,17 @@
-package dto;
+package DTO;
 
 public class ReviewReplyDTO {
 	private int re_col;
 	private int review_num;
-	private String re_content;
+	private String re_content, user_id;
+
+	public String getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
 
 	public int getRe_col() {
 		return re_col;

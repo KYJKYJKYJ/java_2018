@@ -1,4 +1,16 @@
 @charset "UTF-8";
+@font-face {
+	font-family: 'seoul-hangang-jang-m';
+	src: url('../font/seoulhangangjangm.eot');
+	src: url('../font/seoulhangangjangm.eot?#iefix')
+		format('embedded-opentype'), url('../font/seoulhangangjangm.woff2')
+		format('woff2'), url('../font/seoulhangangjangm.woff') format('woff'),
+		url('../font/seoulhangangjangm.ttf') format('truetype'),
+		url('../font/seoulhangangjangm.svg#seoul-hangang-jang-m')
+		format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 
 * {
 	margin: 0;
@@ -8,7 +20,7 @@
 #wrap {
 	width: 1200px;
 	margin: 0 auto;
-	font-family: '서울한강 장체 BL', serif;
+	font-family: 'seoul-hangang-jang-m', serif;
 	font-size: 25px; 
 }
 

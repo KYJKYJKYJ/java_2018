@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KH & GYM_Instructor</title>
+<title>KH & GYM</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -22,10 +22,35 @@
 <!-- css 적용 -->
 <link rel="stylesheet" href="../css\main.css">
 <link rel="stylesheet" href="../css\nav_accordian.css">
-<link rel="stylesheet" href="../css\greeting.css" />
 
 <!-- js 적용 -->
 <script type="text/javascript" src="../js/main_navaccordian.js"></script>
+
+<link rel="stylesheet" href="../font/seoulhangangjangm.eot">
+<link rel="stylesheet" href="../font/seoulhangangjangm.ttf">
+<link rel="stylesheet" href="../font/seoulhangangjangm.woff">
+<link rel="stylesheet" href="../font/seoulhangangjangm.woff2">
+<style type="text/css">
+/* 폰트 받아오기 */
+@font-face {
+	font-family: 'seoul-hangang-jang-m';
+	src: url('../font/seoulhangangjangm.eot');
+	src: url('../font/seoulhangangjangm.eot?#iefix')
+		format('embedded-opentype'), url('../font/seoulhangangjangm.woff2')
+		format('woff2'), url('../font/seoulhangangjangm.woff') format('woff'),
+		url('../font/seoulhangangjangm.ttf') format('truetype'),
+		url('../font/seoulhangangjangm.svg#seoul-hangang-jang-m')
+		format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* 모든 전체 폰트 적용하기 */
+* {
+	font-family: seoul-hangang-jang-m
+}
+
+</style>
 
 </head>
 <body>
@@ -85,38 +110,44 @@
 								<span class="account"></span>Account
 							</h3>
 							<ul id="account_sub">
-								<%
-									String id = (String) session.getAttribute("ID속성이름");
-									boolean login = id == null ? false : true;
-								%>
+							    <%
+                           String id = (String) session.getAttribute("user_id");
+                           boolean login = id == null ? false : true;
+                        %>
 
-								<%
-									if (login) {
-								%>
-								<li><a href="#">Logout</a></li>
-								<%
-									} else {
-								%>
-								<li><a href="#">Login</a></li>
-								<%
-									}
-								%>
-								
-								<%
-									if (login == false) {
-								%>
-								<li><a href="MemberJoinForm.jsp">Join</a></li>
-								<%
-									}
-								%>
-								
-								<%
-									if (login) {
-								%>
-								<li><a href="#">My Page</a></li>
-								<%
-									}
-								%>
+                        <%
+                           if  (login) {
+                        	   out.write("<script type='text/javascript'>\n");
+                              // out.write("alert('즐거운 시간 보내세요!')");
+                               out.write("</script>\n");
+                        	   
+                        %>
+                        
+                        <li><a href="Logout.do">Logout</a></li>
+                        <%
+                           } else {
+                        	  
+                        %>
+                        <li><a href="Login.do">Login</a></li>
+                        <%
+                           }
+                        %>
+                        
+                        <%
+                           if (login == false) {
+                        %>
+                           <li><a href="Mem.do">Join</a></li>
+                        <%
+                           }
+                        %>
+                        
+                        <%
+                           if (login) {
+                        %>
+                           <li><a href="MyPage.do">My Page</a></li>
+                        <%
+                           }
+                        %>
 							</ul>
 						</li>
 					</ul>
@@ -124,23 +155,28 @@
 			</div>
 		</div>
 		<!-- header end -->
+		
+<div class="container">
 		<div id="section">
 			<div id="instructor_intro">
 				<img src="../images/Instructor_img.png" width="100%">
 			</div>
 			<div id="instructor_intro2">
-				<img src="../images/introduceinstructor.PNG">
+				<img src="../images/introduceinstructor.PNG" width="60%" style="display: block; margin: 0 auto;" >
 			</div>
 			<hr>
 			<div id="instructor_trainer">
 				<ul type="none">
-					<li><img src="../images/gongyou.jpg"></li>
-					<li><img src="../images/bear.jpg"></li>
-					<li><img src="../images/gosu.jpg"></li>
-					<li><img src="../images/han.jpg"></li>
+					<li><img src="../images/han.PNG" width="80%" style="padding:50px; display: block; margin: 0 auto;"></li>
+					<li><img src="../images/jinpyo.PNG" width="80%" style="padding:50px; display: block; margin: 0 auto;"></li>
+					<li><img src="../images/Moon.PNG" width="80%" style="padding:50px; display: block; margin: 0 auto;"></li>
+					<li><img src="../images/sona.PNG" width="80%" style="padding:50px; display: block; margin: 0 auto;"></li>
+					<li><img src="../images/0je.PNG" width="80%" style="padding:50px; display: block; margin: 0 auto;"></li>
+					
 				</ul>
 			</div>
 		</div>
+</div>
 		<!-- section end -->
       <div id="footer">
          <a href="main.do">

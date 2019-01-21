@@ -1,4 +1,4 @@
-package dto;
+package DTO;
 
 public class PageDTO {
    private int currentPage; // 현재페이지

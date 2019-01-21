@@ -5,13 +5,13 @@
 <head>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>KH & GYM</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/main_mini_location.js"></script>
 
 <!-- 부트스트랩 -->
-<script src="js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="../css/bootstrap-theme.css">
 <link rel="stylesheet" href="../css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="../css/bootstrap.css">
@@ -91,38 +91,44 @@
 								<span class="account"></span>Account
 							</h3>
 							<ul id="account_sub">
-								<%
-									String id = (String) session.getAttribute("ID속성이름");
-									boolean login = id == null ? false : true;
-								%>
+							    <%
+                           String id = (String) session.getAttribute("user_id");
+                           boolean login = id == null ? false : true;
+                        %>
 
-								<%
-									if (login) {
-								%>
-								<li><a href="#">Logout</a></li>
-								<%
-									} else {
-								%>
-								<li><a href="#">Login</a></li>
-								<%
-									}
-								%>
-								
-								<%
-									if (login == false) {
-								%>
-								<li><a href="MemberJoinForm.jsp">Join</a></li>
-								<%
-									}
-								%>
-								
-								<%
-									if (login) {
-								%>
-								<li><a href="#">My Page</a></li>
-								<%
-									}
-								%>
+                        <%
+                           if  (login) {
+                        	   out.write("<script type='text/javascript'>\n");
+                               //out.write("alert('즐거운 시간 보내세요!')");
+                               out.write("</script>\n");
+                        	   
+                        %>
+                        
+                        <li><a href="Logout.do">Logout</a></li>
+                        <%
+                           } else {
+                        	  
+                        %>
+                        <li><a href="Login.do">Login</a></li>
+                        <%
+                           }
+                        %>
+                        
+                        <%
+                           if (login == false) {
+                        %>
+                           <li><a href="Mem.do">Join</a></li>
+                        <%
+                           }
+                        %>
+                        
+                        <%
+                           if (login) {
+                        %>
+                           <li><a href="MyPage.do">My Page</a></li>
+                        <%
+                           }
+                        %>
 							</ul>
 						</li>
 					</ul>

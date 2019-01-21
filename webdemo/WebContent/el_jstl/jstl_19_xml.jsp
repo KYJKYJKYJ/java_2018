@@ -20,11 +20,11 @@
 <x:parse var="xmldata" xml="${mem}"></x:parse>
 <x:forEach select="$xmldata//student">
 	<p>
-		<x:out select="./name"/> <%-- name이라는 태그를 가져옴 --%> /
-		<x:out select="./id"/> <%-- id이라는 태그를 가져옴 --%> / 
-		<x:out select="./age"/> <%-- age이라는 태그를 가져옴 --%>
+		<x:out select="./name"/> /
+		<x:out select="./id"/> / 
+		<x:out select="./age"/>
 	</p>
-</x:forEach> <%-- 반복되는 요소인 student를 처리하는 구문 --%>
+</x:forEach>
 
 </body>
 </html>
